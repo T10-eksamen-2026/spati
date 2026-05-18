@@ -15,20 +15,17 @@ const { label, href = "#", size = "large" } = Astro.props;
 <style>
   .btn {
     display: inline-block;
-    font-family: inherit;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-family: "lacquer", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     text-decoration: none;
     letter-spacing: 0.06em;
     border-radius: 15px;
     cursor: pointer;
-    user-select: none;
     line-height: 1;
-    white-space: nowrap;
-
-    background-color: #c2ec7d;
-    color: #232a25;
-    border: 2.5px solid #232a25;
+    background-color: var(--color-light-green);
+    color: var(--color-text);
+    border: 2.5px solid var(--color-black);
     box-shadow: none;
 
     transition:
@@ -50,12 +47,12 @@ const { label, href = "#", size = "large" } = Astro.props;
 
   .btn:hover {
     background-color: #2e8b2e;
-    color: #f8f4e7;
+    color: var(--color-text-inverted);
   }
 
   .btn:active {
     background-color: #1a5e1a;
-    color: #f8f4e7;
+    color: var(--color-text-inverted);
     box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.35);
   }
 </style>
