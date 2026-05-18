@@ -1,0 +1,61 @@
+---
+interface Props {
+  label: string;
+  href?: string;
+  size?: "large" | "small";
+}
+
+const { label, href = "#", size = "large" } = Astro.props;
+---
+
+<a href={href} class:list={["btn", size === "small" ? "btn--small" : "btn--large"]}>
+  {label}
+</a>
+
+<style>
+  .btn {
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    border-radius: 15px;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+    white-space: nowrap;
+
+    background-color: #c2ec7d;
+    color: #232a25;
+    border: 2.5px solid #232a25;
+    box-shadow: none;
+
+    transition:
+      background-color 0.12s ease,
+      color 0.12s ease,
+      box-shadow 0.08s ease;
+  }
+
+  .btn--large {
+    padding: clamp(0.55rem, 1.5vw, 0.75rem) clamp(1.2rem, 4vw, 2.5rem);
+    font-size: clamp(0.9rem, 2vw, 1.25rem);
+  }
+
+  .btn--small {
+    padding: clamp(0.4rem, 1vw, 0.55rem) clamp(0.8rem, 2.5vw, 1.4rem);
+    font-size: clamp(0.7rem, 1.4vw, 0.85rem);
+    border-radius: 10px;
+  }
+
+  .btn:hover {
+    background-color: #2e8b2e;
+    color: #f8f4e7;
+  }
+
+  .btn:active {
+    background-color: #1a5e1a;
+    color: #f8f4e7;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.35);
+  }
+</style>
