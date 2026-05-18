@@ -1,6 +1,8 @@
 ---
+import Layout from '../components/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import Button from "../components/Button.astro";
 ---
 
@@ -18,6 +20,9 @@ import Button from "../components/Button.astro";
   <body>
     <Header />
     <main>
+        <Layout title="Nørrebro Späti">
+  <Hero />
+</Layout>
       <h1>Nørrebro Späti</h1>
       <div class="btn-demo">
         <Button label="Tag mig derhen" size="large" />
