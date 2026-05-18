@@ -8,15 +8,17 @@ const { background, hoverColor } = Astro.props;
   </div>
   <nav class="nav">
     <ul>
-      <li><a href="/sortiment">Vores udvalg</a></li>
-      <li><a href="/events">Events & arrangementer</a></li>
+      <li><a class="shake-on-hover" href="/sortiment">Vores udvalg</a></li>
+      <li>
+        <a class="shake-on-hover" href="/events">Events & arrangementer</a>
+      </li>
     </ul>
   </nav>
 </header>
 
 <style>
   .header {
-    background-color: #fc9bf2;
+    background-color: {background};
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,8 +39,28 @@ const { background, hoverColor } = Astro.props;
     display: flex;
   }
 
-  p:hover {
-    color: fff;
+  .nav a:hover {
+    color: {hoverColor};
     transition: 0.3s;
+    display: inline-block;
+  }
+
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20%,
+    60% {
+      transform: translateX(-1px);
+    }
+    40%,
+    80% {
+      transform: translateX(1px);
+    }
+  }
+
+  .shake-on-hover:hover {
+    animation: shake 0.4s ease;
   }
 </style>
