@@ -7,13 +7,13 @@ const { background, hoverColor } = Astro.props;
   style={`background-color: ${background}; --hover-color: ${hoverColor};`}
 >
   <div>
-    <a href="/"><img src="" alt="Logo" /></a>
+    <a href="/"><img src="/src/img/engle.png" alt="Logo" /></a>
   </div>
   <nav class="nav">
     <ul>
-      <li><a class="shake-on-hover" href="/sortiment">Vores udvalg</a></li>
+      <li><a class="shake-on-hover" href="/sortiment">vores udvalg</a></li>
       <li>
-        <a class="shake-on-hover" href="/events">Events & arrangementer</a>
+        <a class="shake-on-hover" href="/events">social scene</a>
       </li>
     </ul>
   </nav>
@@ -26,6 +26,12 @@ const { background, hoverColor } = Astro.props;
     justify-content: space-between;
   }
 
+  img {
+    max-width: 150px;
+    height: auto;
+    margin-left: 20px;
+  }
+
   .nav {
     display: flex;
     gap: 120px;
@@ -35,10 +41,13 @@ const { background, hoverColor } = Astro.props;
   .nav a {
     text-decoration: none;
     color: #000;
+    font-size: clamp(1rem, 3vw, 2rem);
   }
 
   .nav ul {
     display: flex;
+    list-style: none;
+    gap: 100px;
   }
 
   .nav a:hover {
