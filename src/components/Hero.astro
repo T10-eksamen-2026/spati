@@ -1,0 +1,109 @@
+---
+const rows = Array.from({ length: 8 });
+---
+
+<section class="hero">
+  <div class="hero-rows" aria-hidden="true">
+    {
+      rows.map((_, i) => (
+        <div class="hero-row" data-index={i}>
+          NØRREBRO SPÄTI
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="hero-logo">
+    <img src="../../src/img/engle.png" alt="Kiosk" class="kiosk-logo" />
+  </div>
+
+  <div class="hero-address">
+    <span>VEDBÆKGADE 4</span>
+    <span>2200 KØBENHAVN N</span>
+  </div>
+</section>
+
+<script>
+  const rows = Array.from(document.querySelectorAll<HTMLElement>(".hero-row"));
+  const STEP = 160; // ms mellem hver række
+  const HOLD = 2200; // ms alle rækker er synlige
+  const FADE = 500; // ms fade-out varighed
+
+  const sleep = (ms: number) => new Promise<void>((res) => setTimeout(res, ms));
+
+  async function heroLoop() {
+    while (true) {
+      for (const row of rows) {
+        row.classList.add("visible");
+        await sleep(STEP);
+      }
+      await sleep(HOLD);
+      rows.forEach((r) => r.classList.remove("visible"));
+      await sleep(FADE + 100);
+    }
+  }
+
+  heroLoop();
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    background-color: #e070c8;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* ---- Tekstrækker ---- */
+  .hero-rows {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .hero-row {
+    color: #fff;
+    text-transform: uppercase;
+    padding-inline: clamp(0.8rem, 3vw, 2rem);
+    opacity: 0;
+  }
+
+  .hero-row.visible {
+    opacity: 1;
+  }
+
+  /* ---- Logo ---- */
+  .hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 10;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  .kiosk-logo {
+    width: clamp(140px, 22vw, 280px);
+    height: auto;
+    display: block;
+  }
+
+  /* ---- Adresse ---- */
+  .hero-address {
+    position: absolute;
+    bottom: 1.2rem;
+    inset-inline: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: clamp(1rem, 3vw, 2rem);
+    color: #1a3d0a;
+    text-transform: uppercase;
+  }
+</style>
