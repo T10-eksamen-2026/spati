@@ -12,11 +12,10 @@
 
   --color-light-purple: #d99af0;
   --color-purple: #825194;
-}
-.hero-row {
-  font-family: "cooper-black-std", serif;
-  font-weight: 400;
-  font-style: normal;
+
+  --color-black: #232a25;
+  --color-text: #232a25;
+  --color-text-inverted: #f8f4e7;
 }
 
 .hero-adress {
