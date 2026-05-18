@@ -1,5 +1,6 @@
 ---
 import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
 ---
 
 <html lang="da">
@@ -12,7 +13,13 @@ import Footer from '../components/Footer.astro';
     <title>Nørrebro Späti</title>
   </head>
   <body>
-    <h1>Nørrebro Späti</h1>
+    <main>
+      <div class="btn-demo">
+        <Button label="Tag mig derhen" size="large" />
+        <Button label="Se mere" size="small" />
+        <Button label="Tilmeld" size="small" />
+      </div>
+    </main>
     <Footer />
   </body>
 </html>
@@ -21,5 +28,14 @@ import Footer from '../components/Footer.astro';
   body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+  }
+
+  .btn-demo {
+    padding: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
   }
 </style>
