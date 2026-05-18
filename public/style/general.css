@@ -1,5 +1,30 @@
 @import url("https://use.typekit.net/yov0doz.css");
 
+:root {
+  --color-pink: #fc9bf2;
+  --color-red: #ec0464;
+
+  --color-baby-blue: #7fd4ff;
+  --color-blue: #0b4ac9;
+
+  --color-light-green: #c2ec7d;
+  --color-green: #109038;
+
+  --color-light-purple: #d99af0;
+  --color-purple: #825194;
+}
+.hero-row {
+  font-family: "cooper-black-std", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero-adress {
+  font-family: "lacquer", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 h1 {
   font-family: "newshound", sans-serif;
   font-weight: 700;
