@@ -1,0 +1,201 @@
+---
+---
+
+<footer>
+  <div class="footer-grid">
+
+    <!-- Venstre: Logo + åbningstider -->
+    <div class="col-left">
+      <div class="logo-placeholder">KIOSK</div>
+      <div class="opening-hours">
+        <h3>Åbningstider</h3>
+        <ul>
+          <li><span>Mandag:</span> Lukket</li>
+          <li><span>Tirsdag:</span> 10-20</li>
+          <li><span>Onsdag:</span> 10-20</li>
+          <li><span>Torsdag:</span> 10-20</li>
+          <li><span>Fredag:</span> 10-22</li>
+          <li><span>Lørdag:</span> 10-22</li>
+          <li><span>Søndag:</span> 10-18</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Midten: Kort + link -->
+    <div class="col-center">
+      <div class="map-wrapper">
+        <iframe
+          src="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N&output=embed"
+          width="100%"
+          height="200"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <a
+        class="map-link"
+        href="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        lets go there
+      </a>
+    </div>
+
+    <!-- Højre: Sociale medier + adresse -->
+    <div class="col-right">
+      <div class="social-links">
+        <a href="https://www.instagram.com/norrebro_spati" target="_blank" rel="noopener noreferrer" class="social-link">
+          <span class="social-label">NORREBRO_SPATI</span>
+          <img src="/src/img/instagram.svg" alt="Instagram" class="social-icon" />
+        </a>
+        <a href="https://www.facebook.com/norrebrospaeti" target="_blank" rel="noopener noreferrer" class="social-link">
+          <span class="social-label">NØRREBRO SPÄTI</span>
+          <img src="/src/img/facebook.svg" alt="Facebook" class="social-icon" />
+        </a>
+      </div>
+      <div class="address">
+        <p>VEDBÆKGADE 4</p>
+        <p>2200 KØBENHAVN N</p>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: #111;
+    color: #fff;
+    padding: 3rem 4rem;
+    font-family: sans-serif;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* --- Venstre --- */
+  .logo-placeholder {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: #5a9a3a;
+    margin-bottom: 1.5rem;
+  }
+
+  .opening-hours h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .opening-hours ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.9;
+    font-size: 0.95rem;
+  }
+
+  .opening-hours ul li span {
+    display: inline-block;
+    min-width: 80px;
+  }
+
+  /* --- Midten --- */
+  .col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .map-wrapper {
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .map-link {
+    color: #fff;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .map-link:hover {
+    text-decoration: underline;
+  }
+
+  /* --- Højre --- */
+  .col-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2.5rem;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-end;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .social-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+    filter: brightness(0) invert(1);
+  }
+
+  .social-link:hover .social-label {
+    opacity: 0.8;
+  }
+
+  .address {
+    text-align: right;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.7;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .col-right {
+      align-items: flex-start;
+    }
+    .address {
+      text-align: left;
+    }
+  }
+</style>
