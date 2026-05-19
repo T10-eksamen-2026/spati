@@ -4,7 +4,7 @@ const { background, hoverColor } = Astro.props;
 
 <header class="header" style={`background-color: ${background}; --hover-color: ${hoverColor};`}>
   <div>
-    <a href="/"><img src="/src/img/engle.png" alt="Logo" /></a>
+    <a href="/"><img src="/img/engle.png" alt="Logo" /></a>
   </div>
   <nav class="nav">
     <ul>
@@ -19,7 +19,8 @@ const { background, hoverColor } = Astro.props;
 <style>
   .header {
     display: flex;
-    align-items: center;
+    align-items: top;
+    padding-top: 1em;
     justify-content: space-between;
   }
 
