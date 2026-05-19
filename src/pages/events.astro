@@ -1,6 +1,27 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+
+const options = {
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
+  },
+};
+
+const url = "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card?";
+const response = await fetch(url, options);
+const data = await response.json();
+
+const kalenderSlides = data.map((event: any) => ({
+  title: event.titel,
+  text: event.teaser,
+  info: event.info,
+  dato: event.dato,
+  tid: event.tid,
+  image: event.billede,
+  href: `/event/${event.id}`,
+}));
 import Hero from "../components/Hero.astro";
 import Layout from "../components/Layout.astro";
 ---
@@ -8,8 +29,7 @@ import Layout from "../components/Layout.astro";
 <html lang="da">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="robots" content="noindex" />
     <meta name="generator" content={Astro.generator} />
