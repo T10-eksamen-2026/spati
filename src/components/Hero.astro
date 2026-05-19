@@ -1,8 +1,10 @@
 ---
 interface Props {
   text?: string;
+  image?: string;
+  imageAlt?: string;
 }
-const { text = "NØRREBRO SPÄTI" } = Astro.props;
+const { text = "NØRREBRO SPÄTI", image = "/engle.png", imageAlt = "Kiosk" } = Astro.props;
 const rows = Array.from({ length: 17 });
 ---
 
@@ -12,7 +14,7 @@ const rows = Array.from({ length: 17 });
   </div>
 
   <div class="hero-logo">
-    <img src="/src/img/engle.png" alt="Kiosk" class="kiosk-logo" />
+    <img src={image} alt={imageAlt} class="kiosk-logo" />
   </div>
 
   <div class="hero-address">

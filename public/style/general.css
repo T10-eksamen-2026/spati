@@ -18,12 +18,6 @@
   --color-text-inverted: #f8f4e7;
 }
 
-.hero-adress {
-  font-family: "lacquer", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 h1 {
   font-family: "newshound", sans-serif;
   font-weight: 700;
@@ -38,7 +32,7 @@ h2 {
 
 h3 {
   font-family: "newshound", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -53,7 +47,6 @@ p {
   font-weight: 700;
   font-style: normal;
 }
-
 .nav {
   font-family: "lacquer", sans-serif;
   font-weight: 400;
