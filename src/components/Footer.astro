@@ -1,12 +1,12 @@
 ---
+
 ---
 
 <footer>
   <div class="footer-grid">
-
     <!-- Venstre: Logo + åbningstider -->
     <div class="col-left">
-      <div class="logo-placeholder">KIOSK</div>
+      <div class="logo-placeholder"><img src="/engle.png" alt="footerlogo" class="footerlogo" /></div>
       <div class="opening-hours">
         <h3>Åbningstider</h3>
         <ul>
@@ -24,24 +24,9 @@
     <!-- Midten: Kort + link -->
     <div class="col-center">
       <div class="map-wrapper">
-        <iframe
-          src="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N&output=embed"
-          width="100%"
-          height="200"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <iframe src="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <a
-        class="map-link"
-        href="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        lets go there
-      </a>
+      <a class="map-link" href="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N" target="_blank" rel="noopener noreferrer"> lets go there </a>
     </div>
 
     <!-- Højre: Sociale medier + adresse -->
@@ -49,11 +34,11 @@
       <div class="social-links">
         <a href="https://www.instagram.com/norrebro_spati" target="_blank" rel="noopener noreferrer" class="social-link">
           <span class="social-label">NORREBRO_SPATI</span>
-          <img src="/src/img/instagram.svg" alt="Instagram" class="social-icon" />
+          <img src="/img/instagram.svg" alt="Instagram" class="social-icon" />
         </a>
         <a href="https://www.facebook.com/norrebrospaeti" target="_blank" rel="noopener noreferrer" class="social-link">
           <span class="social-label">NØRREBRO SPÄTI</span>
-          <img src="/src/img/facebook.svg" alt="Facebook" class="social-icon" />
+          <img src="/img/facebook.svg" alt="Facebook" class="social-icon" />
         </a>
       </div>
       <div class="address">
@@ -61,7 +46,6 @@
         <p>2200 KØBENHAVN N</p>
       </div>
     </div>
-
   </div>
 </footer>
 
@@ -83,14 +67,11 @@
   }
 
   /* --- Venstre --- */
-  .logo-placeholder {
-    font-size: 2.5rem;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    color: #5a9a3a;
-    margin-bottom: 1.5rem;
-  }
 
+  .logo-placeholder img {
+    max-width: 150px;
+    padding-left: -20px;
+  }
   .opening-hours h3 {
     font-size: 1.1rem;
     font-weight: 600;
@@ -196,6 +177,10 @@
     }
     .address {
       text-align: left;
+    }
+    .logo-placeholder img {
+      max-width: 150px;
+      padding: none;
     }
   }
 </style>
