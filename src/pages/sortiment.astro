@@ -1,6 +1,8 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../components/Layout.astro";
 ---
 
 <html lang="da">
@@ -16,6 +18,9 @@ import Header from "../components/Header.astro";
   <body>
     <Header background="var(--color-pink)" hoverColor="#fff" />
     <main>
+      <Layout title="VORES UDVALG">
+        <Hero text="VORES UDVALG" image="/barstole.png" imageAlt="Barstole" />
+      </Layout>
       <h1>Nørrebro Späti</h1>
     </main>
     <Footer />

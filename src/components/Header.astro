@@ -2,10 +2,7 @@
 const { background, hoverColor } = Astro.props;
 ---
 
-<header
-  class="header"
-  style={`background-color: ${background}; --hover-color: ${hoverColor};`}
->
+<header class="header" style={`background-color: ${background}; --hover-color: ${hoverColor};`}>
   <div>
     <a href="/"><img src="/src/img/engle.png" alt="Logo" /></a>
   </div>
@@ -27,7 +24,7 @@ const { background, hoverColor } = Astro.props;
   }
 
   img {
-    max-width: 150px;
+    max-width: 15vw;
     height: auto;
     margin-left: 20px;
   }
@@ -47,7 +44,7 @@ const { background, hoverColor } = Astro.props;
   .nav ul {
     display: flex;
     list-style: none;
-    gap: 100px;
+    gap: 10vw;
   }
 
   .nav a:hover {
@@ -73,5 +70,10 @@ const { background, hoverColor } = Astro.props;
 
   .shake-on-hover:hover {
     animation: shake 0.4s ease;
+  }
+  @media screen and (max-width: 768px) {
+    .nav ul {
+      gap: 7vw;
+    }
   }
 </style>

@@ -22,6 +22,8 @@ const kalenderSlides = data.map((event: any) => ({
   image: event.billede,
   href: `/event/${event.id}`,
 }));
+import Hero from "../components/Hero.astro";
+import Layout from "../components/Layout.astro";
 ---
 
 <html lang="da">
@@ -37,6 +39,9 @@ const kalenderSlides = data.map((event: any) => ({
   <body>
     <Header background="var(--color-pink)" hoverColor="#fff" />
     <main>
+      <Layout title="Social Scene">
+        <Hero text="SOCIAL SCENE" image="/dj.png" imageAlt="DJ pult" />
+      </Layout>
       <h1>Nørrebro Späti</h1>
     </main>
     <Footer />
