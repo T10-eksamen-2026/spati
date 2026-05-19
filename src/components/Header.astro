@@ -2,9 +2,12 @@
 const { background, hoverColor } = Astro.props;
 ---
 
-<header class="header" style={`background-color: ${background}; --hover-color: ${hoverColor};`}>
+<header
+  class="header"
+  style={`background-color: ${background}; --hover-color: ${hoverColor};`}
+>
   <div>
-    <a href="/"><img src="/src/img/engle.png" alt="Logo" /></a>
+    <a href="/"><img src="/public/engle.png" alt="Logo" /></a>
   </div>
   <nav class="nav">
     <ul>
