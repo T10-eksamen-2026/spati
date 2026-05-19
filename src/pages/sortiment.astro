@@ -21,7 +21,52 @@ import Layout from "../components/Layout.astro";
       <Layout title="VORES UDVALG">
         <Hero text="VORES UDVALG" image="/barstole.png" imageAlt="Barstole" />
       </Layout>
-      <h1>Nørrebro Späti</h1>
+      <h1>Sortiment</h1>
+      <h2>Your fav hang-out spot</h2>
+      <section class="illustration">
+        <div>
+          <img src="/public/img/øl.svg" alt="illustration af øl" />
+          <h3>køleskabet</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+            officiis consequuntur, animi est ut totam excepturi inventore
+            laboriosam quisquam. Possimus!
+          </p>
+        </div>
+        <div>
+          <img src="/public/img/ansigt.svg" alt="illustration af ansigt" /><h3>
+            vinskabet
+          </h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab in
+            explicabo nemo aliquid laborum corrupti, officia nostrum eos dolorem
+            aperiam?
+          </p>
+        </div>
+        <div>
+          <img
+            src="/public/img/sardiner.svg"
+            alt="illustration af sardiner"
+          /><h3>mad og snacks</h3><p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+            officiis consequuntur, animi est ut totam excepturi inventore
+            laboriosam quisquam. Possimus!
+          </p>
+        </div>
+        <div>
+          <img src="/public/img/cd.svg" alt="illustration af cd" /><h3>
+            ting og sager
+          </h3><p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+            officiis consequuntur, animi est ut totam excepturi inventore
+            laboriosam quisquam. Possimus!
+          </p>
+        </div>
+        <img
+          src="/public/img/nummi.svg"
+          alt="illustreret figur med bar numse"
+        />
+      </section>
     </main>
     <Footer />
   </body>
@@ -31,5 +76,19 @@ import Layout from "../components/Layout.astro";
   body {
     margin: 0;
     padding: 0;
+    background-color: var(--color-text-inverted);
+  }
+
+  .illustration {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .illustration img {
+    max-width: 100%;
+    height: auto;
   }
 </style>
