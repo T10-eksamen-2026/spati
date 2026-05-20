@@ -19,7 +19,11 @@ import Layout from "../components/Layout.astro";
     <Header background="var(--color-pink)" hoverColor="#fff" />
     <main>
       <Layout title="VORES UDVALG">
-        <Hero text="VORES UDVALG" image="img/barstole.png" imageAlt="Barstole" />
+        <Hero
+          text="VORES UDVALG"
+          image="img/barstole.png"
+          imageAlt="Barstole"
+        />
       </Layout>
 
       <!-- ── SORTIMENT ── -->
@@ -37,8 +41,12 @@ import Layout from "../components/Layout.astro";
           <div class="sortiment__content">
             <h2 class="sortiment__title">Køleskabet</h2>
             <p class="sortiment__text">
-              Kolde drikke, specialøl, sodavand, energidrikke, juice, cider og alt det man får lyst til at tage med videre ud i byen. Køleskabet er fyldt med både velkendte favoritter og mere niche ting man ikke finder alle steder. Noget til de hurtige
-              stop, noget til de lange aftener og noget til når fortovet foran Späti pludselig bliver til aftenens hangout spot.
+              Kolde drikke, specialøl, sodavand, energidrikke, juice, cider og
+              alt det man får lyst til at tage med videre ud i byen. Køleskabet
+              er fyldt med både velkendte favoritter og mere niche ting man ikke
+              finder alle steder. Noget til de hurtige stop, noget til de lange
+              aftener og noget til når fortovet foran Späti pludselig bliver til
+              aftenens hangout spot.
             </p>
           </div>
         </div>
@@ -51,8 +59,11 @@ import Layout from "../components/Layout.astro";
           <div class="sortiment__content">
             <h2 class="sortiment__title">Vinskabet</h2>
             <p class="sortiment__text">
-              Et udvalg af naturvin, pét-nat, orangevin og andre flasker med masser af personlighed. Vine der er lavet til at blive delt, åbnet spontant og drukket med venner på en onsdag der føles som en fredag. Fra lette og friske flasker til noget
-              lidt mere funky — altid udvalgt med fokus på gode vibes.
+              Et udvalg af naturvin, pét-nat, orangevin og andre flasker med
+              masser af personlighed. Vine der er lavet til at blive delt, åbnet
+              spontant og drukket med venner på en onsdag der føles som en
+              fredag. Fra lette og friske flasker til noget lidt mere funky —
+              altid udvalgt med fokus på gode vibes.
             </p>
           </div>
         </div>
@@ -65,8 +76,11 @@ import Layout from "../components/Layout.astro";
           <div class="sortiment__content">
             <h2 class="sortiment__title">Mad & Snacks</h2>
             <p class="sortiment__text">
-              Sandwiches, oliven, snacks og dåsefisk - små ting der fungerer lige så godt til en hurtig bid som til en hel aften foran kiosken. Noget salt, noget sødt og noget man får lyst til når man egentlig bare kom efter en ting. Simpelt,
-              tilfredsstillende og perfekt sammen med noget koldt fra køleskabet.
+              Sandwiches, oliven, snacks og dåsefisk - små ting der fungerer
+              lige så godt til en hurtig bid som til en hel aften foran kiosken.
+              Noget salt, noget sødt og noget man får lyst til når man egentlig
+              bare kom efter en ting. Simpelt, tilfredsstillende og perfekt
+              sammen med noget koldt fra køleskabet.
             </p>
           </div>
         </div>
@@ -79,236 +93,186 @@ import Layout from "../components/Layout.astro";
           <div class="sortiment__content">
             <h2 class="sortiment__title">Ting og Sager</h2>
             <p class="sortiment__text">
-              Bøger, vinyler, tøj og posters - små fund og ting man får lyst til at tage med spontant. En hylde hos din yndlingskiosk hvor man kan gå på opdagelse, finde noget nyt at lytte til, noget at læse i parken, noget lækkert at snacke på, eller noget fedt at tage på. Lidt kiosk, lidt pladebutik og generelt bare gode sager. 
+              Bøger, vinyler, tøj og posters - små fund og ting man får lyst til
+              at tage med spontant. En hylde hos din yndlingskiosk hvor man kan
+              gå på opdagelse, finde noget nyt at lytte til, noget at læse i
+              parken, noget lækkert at snacke på, eller noget fedt at tage på.
+              Lidt kiosk, lidt pladebutik og generelt bare gode sager.
             </p>
           </div>
         </div>
 
         <!-- Bottom CTA -->
         <div class="sortiment__cta">
-          <img class="sortiment__cta-img" src="img/nummi.svg" alt="Kiosk bar illustration" />
-        </div>
-      <h1>Sortiment</h1>
-      <h2>Your fav hang-out spot</h2>
-      <section class="illustration">
-        <div>
-          <img src="/public/img/øl.svg" alt="illustration af øl" />
-          <h3>køleskabet</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-            officiis consequuntur, animi est ut totam excepturi inventore
-            laboriosam quisquam. Possimus!
-          </p>
-        </div>
-        <div>
-          <img src="/public/img/ansigt.svg" alt="illustration af ansigt" /><h3>
-            vinskabet
-          </h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab in
-            explicabo nemo aliquid laborum corrupti, officia nostrum eos dolorem
-            aperiam?
-          </p>
-        </div>
-        <div>
           <img
-            src="/public/img/sardiner.svg"
-            alt="illustration af sardiner"
-          /><h3>mad og snacks</h3><p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-            officiis consequuntur, animi est ut totam excepturi inventore
-            laboriosam quisquam. Possimus!
-          </p>
+            class="sortiment__cta-img"
+            src="img/nummi.svg"
+            alt="Kiosk bar illustration"
+          />
         </div>
-        <div>
-          <img src="/public/img/cd.svg" alt="illustration af cd" /><h3>
-            ting og sager
-          </h3><p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-            officiis consequuntur, animi est ut totam excepturi inventore
-            laboriosam quisquam. Possimus!
-          </p>
-        </div>
-        <img
-          src="/public/img/nummi.svg"
-          alt="illustreret figur med bar numse"
-        />
       </section>
+      <Footer />
     </main>
-    <Footer />
   </body>
-</html>
 
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--color-text-inverted);
-  }
-
-  .illustration {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .illustration img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* ─────────────────────────────
-     SORTIMENT — mobile first
-  ───────────────────────────── */
-  .sortiment {
-    background-color: var(--color-text-inverted);
-    color: var(--color-text);
-    /* Override any inherited full-width behaviour */
-    box-sizing: border-box;
-  }
-
-  /* ── Intro ── */
-  .sortiment__intro {
-    text-align: center;
-    padding: 3rem 1.5rem 0;
-  }
-
-  .sortiment__heading {
-    font-size: 2.2rem;
-    margin: 0 0 0.4rem;
-    font-weight: 700;
-  }
-
-  .sortiment__tagline {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-weight: 400 !important; /* override general.css p bold */
-    margin: 0;
-  }
-
-  /* ── Items — mobile: stacked, centered ── */
-  .sortiment__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 3.5rem 1.5rem;
-    gap: 1.5rem;
-    box-sizing: border-box;
-  }
-
-  .sortiment__illustration {
-    display: flex;
-    justify-content: center;
-  }
-
-  .sortiment__illustration img {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    display: block;
-  }
-
-   .sortiment__item--tall img {
-      max-width: 90px;
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--color-text-inverted);
     }
 
-  /* h2 → lacquer via general.css, override size/color */
-  .sortiment__title {
-    font-size: 0.85rem !important;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--color-green) !important;
-    margin: 0 0 0.75rem;
-  }
-
-  /* p → override general.css font-weight: 700 */
-  .sortiment__text {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    font-weight: 400 !important;
-    margin: 0 auto;
-    max-width: 38ch;
-  }
-
-  /* ── CTA — mobile ── */
-  .sortiment__cta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    /* padding: 3rem 1.5rem 5rem;
-    margin-top: 1rem; */
-  }
-
-  .sortiment__cta-img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    display: block;
-    padding: 50px;
-  }
-
-  /* ─────────────────────────────
-     DESKTOP — two-column alternating
+    /* ─────────────────────────────
+     SORTIMENT — mobile first
   ───────────────────────────── */
-  @media (min-width: 720px) {
+    .sortiment {
+      background-color: var(--color-text-inverted);
+      color: var(--color-text);
+      /* Override any inherited full-width behaviour */
+      box-sizing: border-box;
+    }
+
+    /* ── Intro ── */
     .sortiment__intro {
-      padding: 5rem 2rem 1rem;
+      text-align: center;
+      padding: 3rem 1.5rem 0;
     }
 
     .sortiment__heading {
-      font-size: 3rem;
+      font-size: 2.2rem;
+      margin: 0 0 0.4rem;
+      font-weight: 700;
     }
 
+    .sortiment__tagline {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 400 !important; /* override general.css p bold */
+      margin: 0;
+    }
+
+    /* ── Items — mobile: stacked, centered ── */
     .sortiment__item {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      text-align: left;
-      max-width: 1000px;
-      width: 100%;
-      margin: 0 auto;
-      gap: 4rem;
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      gap: 1.5rem;
+      box-sizing: border-box;
     }
 
-    /* illustration always first in DOM, sits in col 1 by default */
-    /* --flip: move illustration to col 2 */
-    .sortiment__item--flip .sortiment__illustration {
-      order: 2;
-    }
-    .sortiment__item--flip .sortiment__content {
-      order: 1;
+    .sortiment__illustration {
+      display: flex;
+      justify-content: center;
     }
 
     .sortiment__illustration img {
-      max-width: 300px;
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      display: block;
     }
 
     .sortiment__item--tall img {
-      max-width: 150px;
+      max-width: 90px;
     }
 
+    /* h2 → lacquer via general.css, override size/color */
+    .sortiment__title {
+      font-size: 0.85rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-green) !important;
+      margin: 0 0 0.75rem;
+    }
+
+    /* p → override general.css font-weight: 700 */
     .sortiment__text {
-      margin: 0;
-      max-width: 52ch;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      font-weight: 400 !important;
+      margin: 0 auto;
+      max-width: 38ch;
     }
 
-    /* .sortiment__cta {
+    /* ── CTA — mobile ── */
+    .sortiment__cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      /* padding: 3rem 1.5rem 5rem;
+    margin-top: 1rem; */
+    }
+
+    .sortiment__cta-img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      padding: 50px;
+    }
+
+    /* ─────────────────────────────
+     DESKTOP — two-column alternating
+  ───────────────────────────── */
+    @media (min-width: 720px) {
+      .sortiment__intro {
+        padding: 5rem 2rem 1rem;
+      }
+
+      .sortiment__heading {
+        font-size: 3rem;
+      }
+
+      .sortiment__item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        text-align: left;
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+        gap: 4rem;
+      }
+
+      /* illustration always first in DOM, sits in col 1 by default */
+      /* --flip: move illustration to col 2 */
+      .sortiment__item--flip .sortiment__illustration {
+        order: 2;
+      }
+      .sortiment__item--flip .sortiment__content {
+        order: 1;
+      }
+
+      .sortiment__illustration img {
+        max-width: 300px;
+      }
+
+      .sortiment__item--tall img {
+        max-width: 150px;
+      }
+
+      .sortiment__text {
+        margin: 0;
+        max-width: 52ch;
+      }
+
+      /* .sortiment__cta {
       padding: 5rem 1rem 7rem;
       margin-top: 2rem;
     } */
 
-    .sortiment__cta-heading {
-      font-size: 5.5rem;
-    }
+      .sortiment__cta-heading {
+        font-size: 5.5rem;
+      }
 
-    .sortiment__cta-img {
-      max-width: 1000px;
-      padding: 100px;
+      .sortiment__cta-img {
+        max-width: 1000px;
+        padding: 100px;
+      }
     }
-  }
-</style>
+  </style>
+</html>
