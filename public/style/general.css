@@ -27,17 +27,19 @@
 h1 {
   font-family: "newshound", sans-serif;
   font-weight: 700;
-  font-size: clamp(40px, 5vw, 70px);
-  line-height: 0.83;
+  font-size: clamp(50px, 5vw, 80px);
+  line-height: 1.28;
   letter-spacing: 0.1em;
+  color: var(--color-text);
 }
 
 h2 {
   font-family: "lacquer", sans-serif;
   font-weight: 400;
-  font-size: clamp(26px, 3.5vw, 40px);
-  line-height: 1.2;
+  font-size: clamp(22px, 2.5vw, 40px);
+  line-height: 1.8;
   letter-spacing: -0.05em;
+  color: var(--color-text);
 }
 
 h3 {
@@ -46,6 +48,7 @@ h3 {
   font-size: clamp(22px, 2.5vw, 26px);
   line-height: 1.19;
   letter-spacing: 0.1em;
+  color: var(--color-text);
 }
 
 h4 {
@@ -54,14 +57,16 @@ h4 {
   font-size: clamp(18px, 2vw, 24px);
   line-height: 1.42;
   letter-spacing: 0;
+  color: var(--color-text);
 }
 
 p {
   font-family: "roboto", sans-serif;
-  font-weight: 400;
-  font-size: clamp(16px, 1.5vw, 20px);
-  line-height: 1.75;
-  letter-spacing: 0.05em;
+  font-weight: 200;
+  font-size: clamp(12px, 1.5vw, 18px);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
 }
 
 .nav {
