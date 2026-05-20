@@ -19,11 +19,7 @@ import Layout from "../components/Layout.astro";
     <Header background="var(--color-pink)" hoverColor="#fff" />
     <main>
       <Layout title="VORES UDVALG">
-        <Hero
-          text="VORES UDVALG"
-          image="img/barstole.png"
-          imageAlt="Barstole"
-        />
+        <Hero text="VORES UDVALG" image="img/barstole.png" imageAlt="Barstole" />
       </Layout>
 
       <!-- ── SORTIMENT ── -->
@@ -41,12 +37,8 @@ import Layout from "../components/Layout.astro";
           <div class="sortiment__content">
             <h2 class="sortiment__title">Køleskabet</h2>
             <p class="sortiment__text">
-              Kolde drikke, specialøl, sodavand, energidrikke, juice, cider og
-              alt det man får lyst til at tage med videre ud i byen. Køleskabet
-              er fyldt med både velkendte favoritter og mere niche ting man ikke
-              finder alle steder. Noget til de hurtige stop, noget til de lange
-              aftener og noget til når fortovet foran Späti pludselig bliver til
-              aftenens hangout spot.
+              Kolde drikke, specialøl, sodavand, energidrikke, juice, cider og alt det man får lyst til at tage med videre ud i byen. Køleskabet er fyldt med både velkendte favoritter og mere niche ting man ikke finder alle steder. Noget til de
+              hurtige stop, noget til de lange aftener og noget til når fortovet foran Späti pludselig bliver til aftenens hangout spot.
             </p>
           </div>
         </div>
@@ -59,11 +51,8 @@ import Layout from "../components/Layout.astro";
           <div class="sortiment__content">
             <h2 class="sortiment__title">Vinskabet</h2>
             <p class="sortiment__text">
-              Et udvalg af naturvin, pét-nat, orangevin og andre flasker med
-              masser af personlighed. Vine der er lavet til at blive delt, åbnet
-              spontant og drukket med venner på en onsdag der føles som en
-              fredag. Fra lette og friske flasker til noget lidt mere funky —
-              altid udvalgt med fokus på gode vibes.
+              Et udvalg af naturvin, pét-nat, orangevin og andre flasker med masser af personlighed. Vine der er lavet til at blive delt, åbnet spontant og drukket med venner på en onsdag der føles som en fredag. Fra lette og friske flasker til noget
+              lidt mere funky — altid udvalgt med fokus på gode vibes.
             </p>
           </div>
         </div>
@@ -76,11 +65,8 @@ import Layout from "../components/Layout.astro";
           <div class="sortiment__content">
             <h2 class="sortiment__title">Mad & Snacks</h2>
             <p class="sortiment__text">
-              Sandwiches, oliven, snacks og dåsefisk - små ting der fungerer
-              lige så godt til en hurtig bid som til en hel aften foran kiosken.
-              Noget salt, noget sødt og noget man får lyst til når man egentlig
-              bare kom efter en ting. Simpelt, tilfredsstillende og perfekt
-              sammen med noget koldt fra køleskabet.
+              Sandwiches, oliven, snacks og dåsefisk - små ting der fungerer lige så godt til en hurtig bid som til en hel aften foran kiosken. Noget salt, noget sødt og noget man får lyst til når man egentlig bare kom efter en ting. Simpelt,
+              tilfredsstillende og perfekt sammen med noget koldt fra køleskabet.
             </p>
           </div>
         </div>
@@ -93,22 +79,15 @@ import Layout from "../components/Layout.astro";
           <div class="sortiment__content">
             <h2 class="sortiment__title">Ting og Sager</h2>
             <p class="sortiment__text">
-              Bøger, vinyler, tøj og posters - små fund og ting man får lyst til
-              at tage med spontant. En hylde hos din yndlingskiosk hvor man kan
-              gå på opdagelse, finde noget nyt at lytte til, noget at læse i
-              parken, noget lækkert at snacke på, eller noget fedt at tage på.
-              Lidt kiosk, lidt pladebutik og generelt bare gode sager.
+              Bøger, vinyler, tøj og posters - små fund og ting man får lyst til at tage med spontant. En hylde hos din yndlingskiosk hvor man kan gå på opdagelse, finde noget nyt at lytte til, noget at læse i parken, noget lækkert at snacke på,
+              eller noget fedt at tage på. Lidt kiosk, lidt pladebutik og generelt bare gode sager.
             </p>
           </div>
         </div>
 
         <!-- Bottom CTA -->
         <div class="sortiment__cta">
-          <img
-            class="sortiment__cta-img"
-            src="img/nummi.svg"
-            alt="Kiosk bar illustration"
-          />
+          <img class="sortiment__cta-img" src="img/nummi.svg" alt="Kiosk bar illustration" />
         </div>
       </section>
       <Footer />
@@ -138,7 +117,7 @@ import Layout from "../components/Layout.astro";
       padding: 3rem 1.5rem 0;
     }
 
-    .sortiment__heading {
+    /* .sortiment__heading {
       font-size: 2.2rem;
       margin: 0 0 0.4rem;
       font-weight: 700;
@@ -146,11 +125,10 @@ import Layout from "../components/Layout.astro";
 
     .sortiment__tagline {
       font-size: 0.7rem;
-      text-transform: uppercase;
       letter-spacing: 0.14em;
       font-weight: 400 !important; /* override general.css p bold */
-      margin: 0;
-    }
+      /* margin: 0;
+    } */ 
 
     /* ── Items — mobile: stacked, centered ── */
     .sortiment__item {
@@ -179,23 +157,22 @@ import Layout from "../components/Layout.astro";
       max-width: 90px;
     }
 
-    /* h2 → lacquer via general.css, override size/color */
+    /* h2 → lacquer via general.css, override size/color
     .sortiment__title {
       font-size: 0.85rem !important;
-      text-transform: uppercase;
       letter-spacing: 0.14em;
       color: var(--color-green) !important;
       margin: 0 0 0.75rem;
-    }
+    } */
 
     /* p → override general.css font-weight: 700 */
-    .sortiment__text {
+    /* .sortiment__text {
       font-size: 0.9rem;
       line-height: 1.7;
       font-weight: 400 !important;
       margin: 0 auto;
       max-width: 38ch;
-    }
+    } */
 
     /* ── CTA — mobile ── */
     .sortiment__cta {
@@ -223,9 +200,9 @@ import Layout from "../components/Layout.astro";
         padding: 5rem 2rem 1rem;
       }
 
-      .sortiment__heading {
+      /* .sortiment__heading {
         font-size: 3rem;
-      }
+      } */
 
       .sortiment__item {
         display: grid;
@@ -255,10 +232,10 @@ import Layout from "../components/Layout.astro";
         max-width: 150px;
       }
 
-      .sortiment__text {
+      /* .sortiment__text {
         margin: 0;
         max-width: 52ch;
-      }
+      } */
 
       /* .sortiment__cta {
       padding: 5rem 1rem 7rem;
