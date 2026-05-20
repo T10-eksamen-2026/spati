@@ -18,35 +18,52 @@
   --color-text-inverted: #f8f4e7;
 }
 
-h1 {
-  font-family: "newshound", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-h2 {
+.hero-adress {
   font-family: "lacquer", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
+h1 {
+  font-family: "newshound", sans-serif;
+  font-weight: 700;
+  font-size: clamp(40px, 5vw, 70px);
+  line-height: 0.83;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-family: "lacquer", sans-serif;
+  font-weight: 400;
+  font-size: clamp(26px, 3.5vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
 h3 {
   font-family: "newshound", sans-serif;
   font-weight: 500;
-  font-style: normal;
+  font-size: clamp(22px, 2.5vw, 26px);
+  line-height: 1.19;
+  letter-spacing: 0.1em;
 }
 
 h4 {
   font-family: "newshound", sans-serif;
   font-weight: 400;
-  font-style: normal;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.42;
+  letter-spacing: 0;
 }
 
 p {
-  font-family: "newshound", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.75;
+  letter-spacing: 0.05em;
 }
+
 .nav {
   font-family: "lacquer", sans-serif;
   font-weight: 400;
