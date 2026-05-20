@@ -23,38 +23,41 @@ import Card from "../components/Card.astro";
       <Layout title="Nørrebro Späti">
         <Hero />
       </Layout>
-      <section>
-        <h1>Kiosk & bar</h1>
-        <h2>Your fav hang-out spot</h2>
-        <p>
-          Vi er ikke helt en kiosk og ikke helt en bar. Vi er det sted du
-          stikker forbi når du ikke har en plan, men alligevel ender med at
-          blive til langt ud på aftenen. Vi sælger naturvin, snacks, tøj og alt
-          muligt andet spøjst. Men mest af alt sælger vi en god aften med folk
-          fra kvarteret.
+
+      <!-- ── Intro ── -->
+      <section class="intro">
+        <h1 class="intro__heading">Kiosk & bar</h1>
+        <p class="intro__tagline">Your fav hang-out spot</p>
+        <p class="intro__text">
+          Vi er ikke helt en kiosk og ikke helt en bar. Vi er det sted du stikker forbi når du ikke har en plan, men alligevel ender med at blive til langt ud på aftenen. Vi sælger naturvin, snacks, tøj og alt muligt andet spøjst. Men mest af alt
+          sælger vi en god aften med folk fra kvarteret.
         </p>
       </section>
-      <img src="/public/img/musikengel.svg" alt="engel der spiller på fløjte" />
-      <div class="btn-demo">
-        <Button label="tag mig derhen" size="large" />
-        <Button label="se mere" size="small" />
-        <Button label="tilmeld" size="small" />
+
+      <!-- ── Foto ── -->
+      <div class="feature-photo">
+        <img src="/img/collage.png" alt="Nørrebro Späti interiør" />
       </div>
-      <Card
-        title="vores udvalg"
-        description="Mad, drikke, ting og sager"
-        image="/mate.jpg"
-        imageAlt="Club-Mate flaske"
-        href="/single"
-      />
-      <Card
-        title="Events og arrangementer"
-        description="Din yndlingskiosk hoster selvfølgelig også dine yndlingsevents "
-        image="/events.jpg"
-        imageAlt="stemningsbillede fra event"
-        href="/single"
-      />
-      <img src="/public/img/nummi.svg" alt="illustreret figur med bar numse" />
+
+      <!-- ── Engel SVG ── -->
+      <div class="angel">
+        <img src="/public/img/musikengel.svg" alt="Engel der spiller på fløjte" />
+      </div>
+
+      <!-- ── Cards ── -->
+      <section class="cards">
+        <div class="cards__item">
+          <Card title="vores udvalg" description="Mad, drikke, ting og sager" image="/img/mate.jpg" imageAlt="Club-Mate flaske" href="/single" />
+        </div>
+        <div class="cards__item">
+          <Card title="Events og arrangementer" description="Din yndlingskiosk hoster selvfølgelig også dine yndlingsevents" image="/img/events.jpg" imageAlt="Stemningsbillede fra event" href="/single" />
+        </div>
+      </section>
+
+      <!-- ── Footer CTA ── -->
+      <div class="cta">
+        <img class="cta__img" src="/public/img/nummi.svg" alt="Illustreret figur med bar numse" />
+      </div>
     </main>
     <Footer />
   </body>
@@ -64,20 +67,172 @@ import Card from "../components/Card.astro";
   body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
     background-color: var(--color-text-inverted);
   }
 
-  .btn-demo {
-    padding: 4rem;
+  /* ── Intro ── */
+  .intro {
+    text-align: center;
+    padding: 5rem 1.5rem 2rem;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .intro__heading {
+    margin: 0 0 0.3rem;
+  }
+
+  .intro__tagline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin: 0 0 1.5rem;
+    font-weight: 400 !important;
+  }
+
+  .intro__text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-weight: 400 !important;
+    margin: 0;
+  }
+
+  /* ── Feature photo ── */
+  .feature-photo {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .feature-photo img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Angel ── */
+  .angel {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 1.5rem 3rem;
+  }
+
+  .angel img {
+    width: 180px;
+    height: auto;
+    padding: 20px;
+  }
+
+  /* ── Cards ── */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 360px;
+    margin: 0 auto;
+    justify-content: center;
     align-items: center;
   }
 
-  img {
-    max-width: 100%;
+  .cards__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+
+
+  .madogdrikke {
+    padding-bottom: 10px;
+  }
+
+  /* ── Footer CTA ── */
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem 3rem;
+  }
+
+  /* Desktop: side by side */
+  @media (min-width: 720px) {
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      padding: 0 2rem 5rem;
+      max-width: 800px;
+    }
+
+    .cards__item {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 4; /* card har 4 rækker: titel, beskrivelse, billede, knap */
+    }
+
+    .feature-photo {
+      display: flex;
+      justify-content: center;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .feature-photo img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      display: block;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .angel {
+      display: flex;
+      justify-content: center;
+      padding: 1rem 1.5rem 3rem;
+    }
+
+    .angel img {
+      width: 250px;
+      height: auto;
+      padding: 20px;
+    }
+
+    .cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+
+  /* ── Footer CTA ── */
+
+  .cta__label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 400 !important;
+    margin: 0 0 0.2rem;
+  }
+
+  .cta__heading {
+    font-size: clamp(2.8rem, 12vw, 5rem);
+    margin: 0 0 2rem;
+    letter-spacing: 0.03em;
+  }
+
+  .cta__img {
+    width: 100%;
+    max-width: 600px;
     height: auto;
+    display: block;
   }
 </style>
