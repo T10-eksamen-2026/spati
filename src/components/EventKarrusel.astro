@@ -74,6 +74,20 @@ const { events, titel } = Astro.props;
     gap: 1rem;
   }
 
+  .slides-container {
+    flex: 1;
+    max-width: 420px;
+    overflow: hidden;
+  }
+
+  .slide {
+    display: none;
+  }
+
+  .slide.aktiv {
+    display: block;
+  }
+
   .burst-btn {
     width: 80px;
     height: 80px;
