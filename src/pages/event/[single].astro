@@ -62,17 +62,17 @@ const { event } = Astro.props as Props;
     <main>
       <section class="kulturnat">
         <h1>{event.titel}</h1>
-        <h2>{event.dato} kl. {event.tid}</h2>
+        <h2 class="dato">{event.dato} kl. {event.tid}</h2>
         <img class="poster" src={event.billede} alt={event.titel} />
-
+        <div class="cta">
+          <Button label="tilmeld" size="small" />
+        </div>
         <div class="content">
           <p>
             {event.info}
           </p>
 
           <h3>Vedbækgade 4, 2200 København N</h3>
-
-          <Button label="tilmeld" size="small" />
         </div>
       </section>
 
@@ -114,18 +114,28 @@ const { event } = Astro.props as Props;
     width: 300px;
     grid-column: 1 / 2;
     grid-row: 3 / 4;
-    margin: 1rem;
+    margin: 1rem 2rem 0;
   }
   .content {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }
 
+  .cta {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    margin: 1rem 2rem;
+  }
+
+  .dato {
+    margin: 1rem 2rem;
+  }
+
   h1 {
     font-size: clamp(3rem, 7vw, 6rem);
     line-height: 0.9;
 
-    margin: 0 0 1rem 0;
+    margin: 1rem 2rem 0;
   }
 
   p {
