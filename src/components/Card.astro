@@ -17,7 +17,7 @@ const { title, description, image, imageAlt = "", href = "#" } = Astro.props;
     <h2 class="card-title">{title}</h2>
     <h3 class="card-description">{description}</h3>
   </div>
-  <img class="card-image" src={image} alt={imageAlt} />
+  <a href={href}><img class="card-image" src={image} alt={imageAlt} /></a>
   <div class="card-cta">
     <Button label="tag mig derhen" href={href} size="large" />
   </div>
@@ -41,13 +41,18 @@ const { title, description, image, imageAlt = "", href = "#" } = Astro.props;
   }
 
   .card-image {
-    width: 100%;
+    max-width: 100%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
     border-radius: 8px;
     display: block;
+    filter: grayscale(100%) contrast(1.2) brightness(0.9);
+    transition: filter 0.1s ease;
   }
 
+  .card-image:hover {
+    filter: grayscale(0%) contrast(1) brightness(1) blur(0);
+  }
   .card-cta {
     display: flex;
     justify-content: center;
@@ -63,7 +68,6 @@ const { title, description, image, imageAlt = "", href = "#" } = Astro.props;
       display: grid;
       grid-template-rows: subgrid;
       grid-row: span 4;
-      max-width: 100%;
     }
   }
 </style>
