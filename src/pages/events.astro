@@ -1,29 +1,33 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../components/Layout.astro";
+import EventKarrusel from "../components/EventKarrusel.astro";
 
 const options = {
   headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
   },
 };
 
-const url = "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card?";
+const url = "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card";
 const response = await fetch(url, options);
 const data = await response.json();
 
-const kalenderSlides = data.map((event: any) => ({
+const eventSlides = data.map((event: any) => ({
   title: event.titel,
   text: event.teaser,
   info: event.info,
   dato: event.dato,
   tid: event.tid,
   image: event.billede,
+  type: event.type,
   href: `/event/${event.id}`,
 }));
-import Hero from "../components/Hero.astro";
-import Layout from "../components/Layout.astro";
+
+const repeatedEvents = eventSlides.filter((event: any) => event.type === "repeated");
+const specialEvents = eventSlides.filter((event: any) => event.type === "special");
 ---
 
 <html lang="da">
@@ -40,9 +44,10 @@ import Layout from "../components/Layout.astro";
     <Header background="var(--color-pink)" hoverColor="#fff" />
     <main>
       <Layout title="Social Scene">
-        <Hero text="SOCIAL SCENE" image="/dj.png" imageAlt="DJ pult" />
+        <Hero text="SOCIAL SCENE" image="/img/dj.png" imageAlt="DJ pult" />
+        <EventKarrusel events={repeatedEvents} titel="repeated events" />
+        <EventKarrusel events={specialEvents} titel="special events" />
       </Layout>
-      <h1>Nørrebro Späti</h1>
     </main>
     <Footer />
   </body>

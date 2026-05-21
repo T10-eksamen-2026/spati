@@ -4,7 +4,7 @@ interface Props {
   image?: string;
   imageAlt?: string;
 }
-const { text = "NØRREBRO SPÄTI", image = "/engle.png", imageAlt = "Kiosk" } = Astro.props;
+const { text = "NØRREBRO SPÄTI", image = "/img/englelogo.png", imageAlt = "Kiosk" } = Astro.props;
 const rows = Array.from({ length: 17 });
 ---
 
@@ -25,7 +25,9 @@ const rows = Array.from({ length: 17 });
 
 <script>
   const section = document.querySelector<HTMLElement>(".hero")!;
-  const allRows = Array.from(document.querySelectorAll<HTMLElement>(".hero-row"));
+  const allRows = Array.from(
+    document.querySelectorAll<HTMLElement>(".hero-row"),
+  );
 
   const STEP = 160;
   const HOLD = 2200;
