@@ -1,7 +1,45 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import Button from "../components/Button.astro";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
+import Button from "../../components/Button.astro";
+
+export async function getStaticPaths() {
+  const options = {
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
+    },
+  };
+
+  const response = await fetch(
+    "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card",
+    options,
+  );
+  const data = await response.json();
+
+  return data.map((event: any) => ({
+    params: { single: String(event.id) },
+    props: { event },
+  }));
+}
+
+interface Event {
+  id: number;
+  titel: string;
+  teaser: string;
+  info: string;
+  billede: string;
+  type: string;
+  dato: string;
+  tid: string;
+  href: string;
+}
+
+interface Props {
+  event: Event;
+}
+
+const { event } = Astro.props as Props;
 ---
 
 <html lang="da">
@@ -12,7 +50,7 @@ import Button from "../components/Button.astro";
     <meta name="robots" content="noindex" />
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="/style/general.css" />
-    <title>Kulturnat</title>
+    <title>{event.titel}</title>
   </head>
 
   <body>
@@ -23,26 +61,18 @@ import Button from "../components/Button.astro";
 
     <main>
       <section class="kulturnat">
-        <h1>Kulturnat</h1>
-        <h2>lørdag d. 5 september kl. 18-23</h2>
-        <img
-          class="poster"
-          src="/img/mate.jpg"
-          alt="plakat fra kulturnat-event"
-        />
-
+        <h1>{event.titel}</h1>
+        <h2 class="dato">{event.dato} kl. {event.tid}</h2>
+        <img class="poster" src={event.billede} alt={event.titel} />
+        <div class="cta">
+          <Button label="tilmeld" size="small" />
+        </div>
         <div class="content">
           <p>
-            Under Kulturnatten åbner vi dørene og byder indenfor med noget
-            særligt. Det kan være en udstilling, en optræden, en installation
-            eller noget helt fjerde. Kulturnatten handler om at opleve noget
-            uventet, og vi er klar til at overraske. Følg med på Instagram for
-            at se hvad vi har planlagt i år.
+            {event.info}
           </p>
 
           <h3>Vedbækgade 4, 2200 København N</h3>
-
-          <Button label="tilmeld" size="small" />
         </div>
       </section>
 
@@ -84,18 +114,28 @@ import Button from "../components/Button.astro";
     width: 300px;
     grid-column: 1 / 2;
     grid-row: 3 / 4;
-    margin: 1rem;
+    margin: 1rem 2rem 0;
   }
   .content {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }
 
+  .cta {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    margin: 1rem 2rem;
+  }
+
+  .dato {
+    margin: 1rem 2rem;
+  }
+
   h1 {
     font-size: clamp(3rem, 7vw, 6rem);
     line-height: 0.9;
 
-    margin: 0 0 1rem 0;
+    margin: 1rem 2rem 0;
   }
 
   p {
