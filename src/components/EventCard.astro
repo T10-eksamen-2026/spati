@@ -1,5 +1,5 @@
 ---
-import CTA1 from "./Button.astro";
+import Button from "./Button.astro";
 
 interface Props {
   title: string;
@@ -11,59 +11,79 @@ interface Props {
   href?: string;
 }
 
-const { title, text, image, dato, tid, type, href } = Astro.props;
+const { title, text, image, dato, href } = Astro.props;
 ---
 
 <article class="event-card">
-  <div class="event-card__billede">
+  <div class="billede-wrapper">
     <img src={image} alt={title} />
+    <img src={image} alt={title} class="ekstra-billede" />
+    <img src={image} alt={title} class="ekstra-billede" />
   </div>
-  <div class="event-card__indhold">
-    <div class="event-card__header">
-      <h3>{title}</h3>
-      {href && <CTA1 text="Se mere" href={href} />}
-    </div>
-    {
-      (dato || tid) && (
-        <p class="event-card__meta">
-          {dato && <span>{dato}</span>}
-          {tid && <span>{tid}</span>}
-        </p>
-      )
-    }
-    <p class="event-card__tekst">{text}</p>
+  <div class="event-info">
+    <h3>{title}</h3>
+    {dato && <h4>{dato}</h4>}
+    <Button label="se mere" size="small" href={href} />
   </div>
+  <p>{text}</p>
 </article>
 
 <style>
   .event-card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
     gap: 1rem;
   }
 
-  .event-card__billede img {
-    width: 100%;
-    border-radius: 16px;
-    object-fit: cover;
+  .billede-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
-  .event-card__header {
+  .billede-wrapper img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .billede-wrapper img:first-child {
+    border-radius: 16px;
+  }
+
+  .ekstra-billede {
+    display: none !important;
+  }
+
+  .event-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
   }
 
-  .event-card__meta {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.9rem;
-    color: var(--color-text);
-    opacity: 0.7;
+  p {
+    margin: 0;
   }
 
-  .event-card__tekst {
-    line-height: 1.6;
+  @media (min-width: 800px) {
+    .billede-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .billede-wrapper img:first-child {
+      border-radius: 16px 0 0 16px;
+    }
+
+    .billede-wrapper img:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    .billede-wrapper img:last-child {
+      border-radius: 0 16px 16px 0;
+    }
+
+    .ekstra-billede {
+      display: block !important;
+    }
   }
 </style>

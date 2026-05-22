@@ -45,8 +45,10 @@ const specialEvents = eventSlides.filter((event: any) => event.type === "special
     <main>
       <Layout title="Social Scene">
         <Hero text="SOCIAL SCENE" image="/img/dj.png" imageAlt="DJ pult" />
-        <EventKarrusel events={repeatedEvents} titel="repeated events" />
-        <EventKarrusel events={specialEvents} titel="special events" />
+        <div class="eventkarrusel">
+          <EventKarrusel events={repeatedEvents} titel="repeated events" />
+          <EventKarrusel events={specialEvents} titel="special events" />
+        </div>
       </Layout>
     </main>
     <Footer />
