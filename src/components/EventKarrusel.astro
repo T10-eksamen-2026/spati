@@ -19,10 +19,34 @@ const { events, titel } = Astro.props;
 ---
 
 <section class="event-karrusel">
-  {titel && <h2 class="karrusel-titel">{titel}</h2>}
+  <div class="karrusel-header">
+    {titel && <h2 class="karrusel-titel">{titel}</h2>}
+    <div class="desktop-navigation">
+      <button class="burst-btn forrige" aria-label="Forrige">
+        <svg class="burst-svg" viewBox="0 0 121 78" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M58.1445 4.86621C58.8149 6.52149 59.6143 8.19215 60.543 9.77539C62.3191 12.8035 64.6289 15.6212 67.5059 17.3506C70.4442 19.1169 73.9188 19.7071 77.7871 18.3232C80.8985 17.2101 84.1755 14.8515 87.6289 10.9912C87.901 12.7823 88.2998 14.6393 88.8496 16.4297C89.7723 19.4345 91.1577 22.3786 93.1885 24.4834C95.2727 26.6437 98.0405 27.9088 101.492 27.418C103.811 27.0882 106.34 25.9782 109.111 23.9854C107.662 29.2946 106.614 34.6646 107.203 39.2109C107.594 42.2255 108.713 44.9806 110.978 47.1123C112.426 48.4758 114.282 49.5224 116.578 50.2393C111.706 53.0003 107.374 56.4576 104.547 60.5332C102.348 63.7034 101.071 67.2443 101.15 71.0557C100.916 70.8036 100.677 70.5543 100.434 70.3105C98.293 68.169 95.7352 66.2977 92.915 65.4355C90.0339 64.5548 86.9313 64.75 83.9033 66.667C81.4807 68.2008 79.1891 70.7831 77.0693 74.6064C76.0822 72.7133 74.8958 70.7678 73.542 68.9658C71.5175 66.2711 69.0478 63.8015 66.2256 62.3652C63.3477 60.9007 60.0927 60.5149 56.7256 62.0557C53.868 63.3634 51.0781 65.9932 48.3799 70.1826C45.1079 66.0089 39.8284 62.4598 34.166 61.5459C30.8615 61.0126 27.395 61.3735 24.1455 63.0723C21.8656 64.2643 19.7501 66.0865 17.8906 68.6221C17.7813 67.7465 17.6692 66.8478 17.5264 65.9043C17.1775 63.6003 16.6691 61.2222 15.6006 59.0938C14.5124 56.9263 12.8555 55.0429 10.2812 53.7246C8.29154 52.7057 5.81191 52.0554 2.71973 51.8203C5.24607 47.7691 7.61309 42.7142 8.5293 37.6475C9.35188 33.0982 9.01801 28.3996 6.45605 24.4766C10.9777 25.0486 15.6034 24.3426 19.4609 21.7021C23.9322 18.6415 27.0779 13.189 27.9473 4.87598C29.2663 6.82916 30.7479 8.77735 32.3408 10.5527C35.0516 13.5739 38.1916 16.2192 41.5 17.4434C44.9194 18.7085 48.5162 18.4383 51.7461 15.6367C54.1947 13.5127 56.344 10.0069 58.1445 4.86621Z"
+            fill="var(--burst-fill)"
+            stroke="var(--burst-stroke)"
+            stroke-width="4"></path>
+          <path d="M71 29L49 41.3134L71 54" stroke="var(--arrow-stroke)" stroke-width="5" stroke-linecap="round" fill="none"></path>
+        </svg>
+      </button>
+      <button class="burst-btn næste" aria-label="Næste">
+        <svg class="burst-svg" viewBox="0 0 121 78" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M58.1445 4.86621C58.8149 6.52149 59.6143 8.19215 60.543 9.77539C62.3191 12.8035 64.6289 15.6212 67.5059 17.3506C70.4442 19.1169 73.9188 19.7071 77.7871 18.3232C80.8985 17.2101 84.1755 14.8515 87.6289 10.9912C87.901 12.7823 88.2998 14.6393 88.8496 16.4297C89.7723 19.4345 91.1577 22.3786 93.1885 24.4834C95.2727 26.6437 98.0405 27.9088 101.492 27.418C103.811 27.0882 106.34 25.9782 109.111 23.9854C107.662 29.2946 106.614 34.6646 107.203 39.2109C107.594 42.2255 108.713 44.9806 110.978 47.1123C112.426 48.4758 114.282 49.5224 116.578 50.2393C111.706 53.0003 107.374 56.4576 104.547 60.5332C102.348 63.7034 101.071 67.2443 101.15 71.0557C100.916 70.8036 100.677 70.5543 100.434 70.3105C98.293 68.169 95.7352 66.2977 92.915 65.4355C90.0339 64.5548 86.9313 64.75 83.9033 66.667C81.4807 68.2008 79.1891 70.7831 77.0693 74.6064C76.0822 72.7133 74.8958 70.7678 73.542 68.9658C71.5175 66.2711 69.0478 63.8015 66.2256 62.3652C63.3477 60.9007 60.0927 60.5149 56.7256 62.0557C53.868 63.3634 51.0781 65.9932 48.3799 70.1826C45.1079 66.0089 39.8284 62.4598 34.166 61.5459C30.8615 61.0126 27.395 61.3735 24.1455 63.0723C21.8656 64.2643 19.7501 66.0865 17.8906 68.6221C17.7813 67.7465 17.6692 66.8478 17.5264 65.9043C17.1775 63.6003 16.6691 61.2222 15.6006 59.0938C14.5124 56.9263 12.8555 55.0429 10.2812 53.7246C8.29154 52.7057 5.81191 52.0554 2.71973 51.8203C5.24607 47.7691 7.61309 42.7142 8.5293 37.6475C9.35188 33.0982 9.01801 28.3996 6.45605 24.4766C10.9777 25.0486 15.6034 24.3426 19.4609 21.7021C23.9322 18.6415 27.0779 13.189 27.9473 4.87598C29.2663 6.82916 30.7479 8.77735 32.3408 10.5527C35.0516 13.5739 38.1916 16.2192 41.5 17.4434C44.9194 18.7085 48.5162 18.4383 51.7461 15.6367C54.1947 13.5127 56.344 10.0069 58.1445 4.86621Z"
+            fill="var(--burst-fill)"
+            stroke="var(--burst-stroke)"
+            stroke-width="4"></path>
+          <path d="M50 29L72 41.3134L50 54" stroke="var(--arrow-stroke)" stroke-width="5" stroke-linecap="round" fill="none"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 
   <div class="karrusel-indre">
-    <button class="burst-btn forrige" aria-label="Forrige">
+    <button class="burst-btn mobil-forrige forrige" aria-label="Forrige">
       <svg class="burst-svg" viewBox="0 0 121 78" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M58.1445 4.86621C58.8149 6.52149 59.6143 8.19215 60.543 9.77539C62.3191 12.8035 64.6289 15.6212 67.5059 17.3506C70.4442 19.1169 73.9188 19.7071 77.7871 18.3232C80.8985 17.2101 84.1755 14.8515 87.6289 10.9912C87.901 12.7823 88.2998 14.6393 88.8496 16.4297C89.7723 19.4345 91.1577 22.3786 93.1885 24.4834C95.2727 26.6437 98.0405 27.9088 101.492 27.418C103.811 27.0882 106.34 25.9782 109.111 23.9854C107.662 29.2946 106.614 34.6646 107.203 39.2109C107.594 42.2255 108.713 44.9806 110.978 47.1123C112.426 48.4758 114.282 49.5224 116.578 50.2393C111.706 53.0003 107.374 56.4576 104.547 60.5332C102.348 63.7034 101.071 67.2443 101.15 71.0557C100.916 70.8036 100.677 70.5543 100.434 70.3105C98.293 68.169 95.7352 66.2977 92.915 65.4355C90.0339 64.5548 86.9313 64.75 83.9033 66.667C81.4807 68.2008 79.1891 70.7831 77.0693 74.6064C76.0822 72.7133 74.8958 70.7678 73.542 68.9658C71.5175 66.2711 69.0478 63.8015 66.2256 62.3652C63.3477 60.9007 60.0927 60.5149 56.7256 62.0557C53.868 63.3634 51.0781 65.9932 48.3799 70.1826C45.1079 66.0089 39.8284 62.4598 34.166 61.5459C30.8615 61.0126 27.395 61.3735 24.1455 63.0723C21.8656 64.2643 19.7501 66.0865 17.8906 68.6221C17.7813 67.7465 17.6692 66.8478 17.5264 65.9043C17.1775 63.6003 16.6691 61.2222 15.6006 59.0938C14.5124 56.9263 12.8555 55.0429 10.2812 53.7246C8.29154 52.7057 5.81191 52.0554 2.71973 51.8203C5.24607 47.7691 7.61309 42.7142 8.5293 37.6475C9.35188 33.0982 9.01801 28.3996 6.45605 24.4766C10.9777 25.0486 15.6034 24.3426 19.4609 21.7021C23.9322 18.6415 27.0779 13.189 27.9473 4.87598C29.2663 6.82916 30.7479 8.77735 32.3408 10.5527C35.0516 13.5739 38.1916 16.2192 41.5 17.4434C44.9194 18.7085 48.5162 18.4383 51.7461 15.6367C54.1947 13.5127 56.344 10.0069 58.1445 4.86621Z"
@@ -33,17 +57,19 @@ const { events, titel } = Astro.props;
       </svg>
     </button>
 
-    <div class="slides-container">
-      {
-        events.map((event, i) => (
-          <div class={`slide ${i === 0 ? "aktiv" : ""}`} data-index={i}>
-            <EventCard title={event.title} text={event.text} image={event.image} dato={event.dato} href={event.href} />
-          </div>
-        ))
-      }
+    <div class="slides-viewport">
+      <div class="slides-container">
+        {
+          events.map((event, i) => (
+            <div class="slide" data-index={i}>
+              <EventCard title={event.title} text={event.text} image={event.image} dato={event.dato} href={event.href} />
+            </div>
+          ))
+        }
+      </div>
     </div>
 
-    <button class="burst-btn næste" aria-label="Næste">
+    <button class="burst-btn mobil-næste næste" aria-label="Næste">
       <svg class="burst-svg" viewBox="0 0 121 78" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M58.1445 4.86621C58.8149 6.52149 59.6143 8.19215 60.543 9.77539C62.3191 12.8035 64.6289 15.6212 67.5059 17.3506C70.4442 19.1169 73.9188 19.7071 77.7871 18.3232C80.8985 17.2101 84.1755 14.8515 87.6289 10.9912C87.901 12.7823 88.2998 14.6393 88.8496 16.4297C89.7723 19.4345 91.1577 22.3786 93.1885 24.4834C95.2727 26.6437 98.0405 27.9088 101.492 27.418C103.811 27.0882 106.34 25.9782 109.111 23.9854C107.662 29.2946 106.614 34.6646 107.203 39.2109C107.594 42.2255 108.713 44.9806 110.978 47.1123C112.426 48.4758 114.282 49.5224 116.578 50.2393C111.706 53.0003 107.374 56.4576 104.547 60.5332C102.348 63.7034 101.071 67.2443 101.15 71.0557C100.916 70.8036 100.677 70.5543 100.434 70.3105C98.293 68.169 95.7352 66.2977 92.915 65.4355C90.0339 64.5548 86.9313 64.75 83.9033 66.667C81.4807 68.2008 79.1891 70.7831 77.0693 74.6064C76.0822 72.7133 74.8958 70.7678 73.542 68.9658C71.5175 66.2711 69.0478 63.8015 66.2256 62.3652C63.3477 60.9007 60.0927 60.5149 56.7256 62.0557C53.868 63.3634 51.0781 65.9932 48.3799 70.1826C45.1079 66.0089 39.8284 62.4598 34.166 61.5459C30.8615 61.0126 27.395 61.3735 24.1455 63.0723C21.8656 64.2643 19.7501 66.0865 17.8906 68.6221C17.7813 67.7465 17.6692 66.8478 17.5264 65.9043C17.1775 63.6003 16.6691 61.2222 15.6006 59.0938C14.5124 56.9263 12.8555 55.0429 10.2812 53.7246C8.29154 52.7057 5.81191 52.0554 2.71973 51.8203C5.24607 47.7691 7.61309 42.7142 8.5293 37.6475C9.35188 33.0982 9.01801 28.3996 6.45605 24.4766C10.9777 25.0486 15.6034 24.3426 19.4609 21.7021C23.9322 18.6415 27.0779 13.189 27.9473 4.87598C29.2663 6.82916 30.7479 8.77735 32.3408 10.5527C35.0516 13.5739 38.1916 16.2192 41.5 17.4434C44.9194 18.7085 48.5162 18.4383 51.7461 15.6367C54.1947 13.5127 56.344 10.0069 58.1445 4.86621Z"
@@ -62,9 +88,21 @@ const { events, titel } = Astro.props;
     text-align: center;
   }
 
+  .karrusel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
   .karrusel-titel {
-    margin-bottom: 0.5rem;
+    margin: 0;
     text-transform: lowercase;
+  }
+
+  .desktop-navigation {
+    display: none;
+    gap: 0.5rem;
   }
 
   .karrusel-indre {
@@ -74,19 +112,21 @@ const { events, titel } = Astro.props;
     gap: 0.5rem;
   }
 
-  .slides-container {
+  .slides-viewport {
     flex: 1;
-    max-width: 420px;
     overflow: hidden;
-    padding: 0 1.5rem;
+    min-width: 0;
+  }
+
+  .slides-container {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    align-items: flex-start;
   }
 
   .slide {
-    display: none;
-  }
-
-  .slide.aktiv {
-    display: block;
+    min-width: 100%;
+    flex-shrink: 0;
   }
 
   .burst-btn {
@@ -121,52 +161,88 @@ const { events, titel } = Astro.props;
   }
 
   @media (min-width: 800px) {
-    .karrusel-indre {
-      align-items: flex-start;
+    .event-karrusel {
+      text-align: left;
     }
 
-    .burst-btn {
+    .desktop-navigation {
+      display: flex;
+    }
+
+    .mobil-forrige,
+    .mobil-næste {
       display: none;
     }
 
+    .slides-viewport {
+      width: 100%;
+    }
+
     .slides-container {
-      max-width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      grid-template-rows: auto auto auto;
       gap: 1rem;
     }
 
     .slide {
-      display: block;
-    }
-
-    .slide {
-      display: grid;
-      grid-template-rows: subgrid;
-      grid-row: span 3;
+      min-width: calc((100% - 2rem) / 3);
+      max-width: calc((100% - 2rem) / 3);
     }
   }
 </style>
 
 <script>
   document.querySelectorAll(".event-karrusel").forEach((karrusel) => {
-    const slides = karrusel.querySelectorAll(".slide");
+    const slides = Array.from(karrusel.querySelectorAll(".slide")) as HTMLElement[];
+    const container = karrusel.querySelector(".slides-container") as HTMLElement;
+    const viewport = karrusel.querySelector(".slides-viewport") as HTMLElement;
+    const perDesktop = 3;
     let aktivSlide = 0;
+    let isAnimating = false;
 
     function erDesktop() {
       return window.innerWidth >= 800;
     }
 
-    function visSlide(n: number) {
-      if (erDesktop()) return;
-
-      slides[aktivSlide]?.classList.remove("aktiv");
-      aktivSlide = ((n % slides.length) + slides.length) % slides.length;
-      slides[aktivSlide]?.classList.add("aktiv");
+    function getSlideWidth() {
+      if (erDesktop()) {
+        const gap = 16;
+        const slideWidth = (viewport.offsetWidth - gap * (perDesktop - 1)) / perDesktop;
+        return slideWidth + gap;
+      }
+      return viewport.offsetWidth;
     }
 
-    karrusel.querySelector(".forrige")?.addEventListener("click", () => visSlide(aktivSlide - 1));
-    karrusel.querySelector(".næste")?.addEventListener("click", () => visSlide(aktivSlide + 1));
+    function updateTransform() {
+      container.style.transform = `translateX(-${aktivSlide * getSlideWidth()}px)`;
+    }
+
+    function forrige() {
+      if (isAnimating || aktivSlide === 0) return;
+      isAnimating = true;
+      aktivSlide = erDesktop() ? Math.max(0, aktivSlide - perDesktop) : Math.max(0, aktivSlide - 1);
+      updateTransform();
+      setTimeout(() => {
+        isAnimating = false;
+      }, 400);
+    }
+
+    function næste() {
+      if (isAnimating) return;
+      const maxSlide = erDesktop() ? slides.length - perDesktop : slides.length - 1;
+      if (aktivSlide >= maxSlide) return;
+      isAnimating = true;
+      aktivSlide = erDesktop() ? Math.min(maxSlide, aktivSlide + perDesktop) : Math.min(maxSlide, aktivSlide + 1);
+      updateTransform();
+      setTimeout(() => {
+        isAnimating = false;
+      }, 400);
+    }
+
+    karrusel.querySelectorAll(".forrige").forEach((btn) => btn.addEventListener("click", forrige));
+    karrusel.querySelectorAll(".næste").forEach((btn) => btn.addEventListener("click", næste));
+
+    window.addEventListener("resize", () => {
+      aktivSlide = 0;
+      updateTransform();
+    });
   });
 </script>
