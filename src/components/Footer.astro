@@ -6,7 +6,9 @@
   <div class="footer-grid">
     <!-- Venstre: Logo + åbningstider -->
     <div class="col-left">
-      <div class="logo-placeholder"><img src="/img/englelogo.png" alt="footerlogo" class="footerlogo" /></div>
+      <div class="logo-placeholder">
+        <img src="/img/englelogo.png" alt="footerlogo" class="footerlogo" />
+      </div>
       <div class="opening-hours">
         <h3>Åbningstider</h3>
         <ul>
@@ -24,19 +26,43 @@
     <!-- Midten: Kort + link -->
     <div class="col-center">
       <div class="map-wrapper">
-        <iframe src="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+          src="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N&output=embed"
+          width="100%"
+          height="200"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <a class="map-link" href="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N" target="_blank" rel="noopener noreferrer"> lets go there </a>
+      <a
+        class="map-link"
+        href="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        lets go there
+      </a>
     </div>
 
     <!-- Højre: Sociale medier + adresse -->
     <div class="col-right">
       <div class="social-links">
-        <a href="https://www.instagram.com/norrebro_spati" target="_blank" rel="noopener noreferrer" class="social-link">
+        <a
+          href="https://www.instagram.com/norrebro_spati"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
+        >
           <span class="social-label">NORREBRO_SPATI</span>
           <img src="/img/instagram.svg" alt="Instagram" class="social-icon" />
         </a>
-        <a href="https://www.facebook.com/norrebrospaeti" target="_blank" rel="noopener noreferrer" class="social-link">
+        <a
+          href="https://www.facebook.com/norrebrospaeti"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
+        >
           <span class="social-label">NØRREBRO SPÄTI</span>
           <img src="/img/facebook.svg" alt="Facebook" class="social-icon" />
         </a>
@@ -188,6 +214,11 @@
     .logo-placeholder img {
       max-width: 150px;
       padding: none;
+    }
+
+    .opening-hours ul,
+    .opening-hours h3 {
+      text-align: center;
     }
   }
 </style>
