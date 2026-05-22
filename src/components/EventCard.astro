@@ -30,9 +30,8 @@ const { title, text, image, dato, href } = Astro.props;
 
 <style>
   .event-card {
-    display: grid;
-    grid-template-rows: subgrid;
-    grid-row: span 3;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
   }
 
@@ -63,6 +62,43 @@ const { title, text, image, dato, href } = Astro.props;
 
   p {
     margin: 0;
+  }
+
+  @media (max-width: 799px) {
+    .billede-wrapper {
+      width: 60%;
+      max-width: 260px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .billede-wrapper img:first-child {
+      width: 100%;
+      height: auto;
+      object-fit: unset;
+      display: block;
+    }
+  }
+
+  @media (max-width: 579px) {
+    .event-card {
+      width: 75%;
+      max-width: 300px;
+      margin: 0 auto;
+      align-items: center;
+      text-align: center;
+    }
+
+    .event-info {
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .billede-wrapper {
+      width: 100%;
+      max-width: none;
+    }
   }
 
   @media (min-width: 800px) {

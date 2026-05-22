@@ -160,7 +160,8 @@ const { events, titel } = Astro.props;
     height: 100%;
   }
 
-  @media (min-width: 800px) {
+  /* 2 slides */
+  @media (min-width: 580px) {
     .event-karrusel {
       text-align: left;
     }
@@ -183,6 +184,14 @@ const { events, titel } = Astro.props;
     }
 
     .slide {
+      min-width: calc((100% - 1rem) / 2);
+      max-width: calc((100% - 1rem) / 2);
+    }
+  }
+
+  /* 3 slides */
+  @media (min-width: 960px) {
+    .slide {
       min-width: calc((100% - 2rem) / 3);
       max-width: calc((100% - 2rem) / 3);
     }
@@ -194,18 +203,21 @@ const { events, titel } = Astro.props;
     const slides = Array.from(karrusel.querySelectorAll(".slide")) as HTMLElement[];
     const container = karrusel.querySelector(".slides-container") as HTMLElement;
     const viewport = karrusel.querySelector(".slides-viewport") as HTMLElement;
-    const perDesktop = 3;
     let aktivSlide = 0;
     let isAnimating = false;
 
-    function erDesktop() {
-      return window.innerWidth >= 800;
+    function getSlidesPerView() {
+      const w = window.innerWidth;
+      if (w >= 960) return 3;
+      if (w >= 580) return 2;
+      return 1;
     }
 
     function getSlideWidth() {
-      if (erDesktop()) {
+      const per = getSlidesPerView();
+      if (per > 1) {
         const gap = 16;
-        const slideWidth = (viewport.offsetWidth - gap * (perDesktop - 1)) / perDesktop;
+        const slideWidth = (viewport.offsetWidth - gap * (per - 1)) / per;
         return slideWidth + gap;
       }
       return viewport.offsetWidth;
@@ -218,31 +230,47 @@ const { events, titel } = Astro.props;
     function forrige() {
       if (isAnimating || aktivSlide === 0) return;
       isAnimating = true;
-      aktivSlide = erDesktop() ? Math.max(0, aktivSlide - perDesktop) : Math.max(0, aktivSlide - 1);
+      const per = getSlidesPerView();
+      aktivSlide = Math.max(0, aktivSlide - per);
       updateTransform();
-      setTimeout(() => {
-        isAnimating = false;
-      }, 400);
+      setTimeout(() => { isAnimating = false; }, 400);
     }
 
     function næste() {
       if (isAnimating) return;
-      const maxSlide = erDesktop() ? slides.length - perDesktop : slides.length - 1;
+      const per = getSlidesPerView();
+      const maxSlide = slides.length - per;
       if (aktivSlide >= maxSlide) return;
       isAnimating = true;
-      aktivSlide = erDesktop() ? Math.min(maxSlide, aktivSlide + perDesktop) : Math.min(maxSlide, aktivSlide + 1);
+      aktivSlide = Math.min(maxSlide, aktivSlide + per);
       updateTransform();
-      setTimeout(() => {
-        isAnimating = false;
-      }, 400);
+      setTimeout(() => { isAnimating = false; }, 400);
+    }
+
+    function checkCentering() {
+      const per = getSlidesPerView();
+      if (slides.length <= per) {
+        container.style.justifyContent = "center";
+        karrusel.querySelectorAll(".burst-btn").forEach((btn) => {
+          (btn as HTMLElement).style.visibility = "hidden";
+        });
+      } else {
+        container.style.justifyContent = "";
+        karrusel.querySelectorAll(".burst-btn").forEach((btn) => {
+          (btn as HTMLElement).style.visibility = "";
+        });
+      }
     }
 
     karrusel.querySelectorAll(".forrige").forEach((btn) => btn.addEventListener("click", forrige));
     karrusel.querySelectorAll(".næste").forEach((btn) => btn.addEventListener("click", næste));
 
+    checkCentering();
+
     window.addEventListener("resize", () => {
       aktivSlide = 0;
       updateTransform();
+      checkCentering();
     });
   });
 </script>
