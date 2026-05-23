@@ -26,50 +26,26 @@
     <!-- Midten: Kort + link -->
     <div class="col-center">
       <div class="map-wrapper">
-        <iframe
-          src="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N&output=embed"
-          width="100%"
-          height="200"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <a
-        class="map-link"
-        href="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        lets go there
-      </a>
+      <a class="map-link" href="https://maps.google.com/maps?q=Vedb%C3%A6kgade+4%2C+2200+K%C3%B8benhavn+N" target="_blank" rel="noopener noreferrer"> lets go there </a>
     </div>
 
     <!-- Højre: Sociale medier + adresse -->
     <div class="col-right">
       <div class="social-links">
-        <a
-          href="https://www.instagram.com/norrebro_spati"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link"
-        >
-          <span class="social-label">NORREBRO_SPATI</span>
+        <a href="https://www.instagram.com/norrebro_spati" target="_blank" rel="noopener noreferrer" class="social-link">
+          <span class="social-label">norrebro_spati</span>
           <img src="/img/instagram.svg" alt="Instagram" class="social-icon" />
         </a>
-        <a
-          href="https://www.facebook.com/norrebrospaeti"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link"
-        >
-          <span class="social-label">NØRREBRO SPÄTI</span>
+        <a href="https://www.facebook.com/norrebrospaeti" target="_blank" rel="noopener noreferrer" class="social-link">
+          <span class="social-label">nørrebro späti</span>
           <img src="/img/facebook.svg" alt="Facebook" class="social-icon" />
         </a>
       </div>
       <div class="address">
-        <p>VEDBÆKGADE 4</p>
-        <p>2200 KØBENHAVN N</p>
+        <p>vedbækgade 4</p>
+        <p>2200 københavn n</p>
       </div>
     </div>
   </div>
@@ -132,6 +108,7 @@
     width: 100%;
     border-radius: 4px;
     overflow: hidden;
+    padding-top: 50px;
   }
 
   .map-link {
@@ -167,13 +144,15 @@
     gap: 1rem;
     text-decoration: none;
     color: #fff;
+    font-family: "lacquer", sans-serif;
   }
 
   .social-label {
+    font-family: "lacquer", sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.06em;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-decoration: underline;
     text-underline-offset: 4px;
   }
@@ -188,14 +167,19 @@
     opacity: 0.8;
   }
 
-  .address {
+  .address p {
+    font-family: "lacquer", sans-serif;
     text-align: right;
-    font-size: 1.3rem;
+    font-size: 1.9rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     line-height: 1.7;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     color: #fff;
+  }
+
+  .address {
+    padding-top: 120px;
   }
   p {
     color: #fff;
