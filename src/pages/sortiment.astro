@@ -32,7 +32,7 @@ import Layout from "../components/Layout.astro";
         <!-- Køleskabet -->
         <div class="sortiment__item sortiment__item--tall">
           <div class="sortiment__illustration">
-            <img src="img/øltegning.svg" alt="Køleskabet illustration" />
+            <img src="img/nyøl.svg" alt="Køleskabet illustration" />
           </div>
           <div class="sortiment__content">
             <h2>køleskabet</h2>
@@ -45,8 +45,8 @@ import Layout from "../components/Layout.astro";
 
         <!-- Vinskabet -->
         <div class="sortiment__item sortiment__item--flip">
-          <div class="sortiment__illustration">
-            <img src="img/vinpige.svg" alt="Vinskabet illustration" />
+          <div class="sortiment__illustration vintegning">
+            <img src="img/pigeiglas.svg" alt="Vinskabet illustration" />
           </div>
           <div>
             <h2>vinskabet</h2>
@@ -139,6 +139,9 @@ import Layout from "../components/Layout.astro";
       display: block;
     }
 
+    .vintegning img {
+      max-width: 100px;
+    }
     .sortiment__item--tall img {
       max-width: 90px;
     }
@@ -204,6 +207,9 @@ import Layout from "../components/Layout.astro";
       .sortiment__cta-img {
         max-width: 700px;
         padding: 50px;
+      }
+      .vintegning img {
+        max-width: 150px;
       }
     }
   </style>
