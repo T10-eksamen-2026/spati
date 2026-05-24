@@ -7,11 +7,15 @@ import EventKarrusel from "../../components/EventKarrusel.astro";
 export async function getStaticPaths() {
   const options = {
     headers: {
-      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
     },
   };
 
-  const response = await fetch("https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card", options);
+  const response = await fetch(
+    "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card",
+    options,
+  );
   const data = await response.json();
 
   return data.map((event: any) => ({
@@ -40,10 +44,14 @@ const { event } = Astro.props as Props;
 
 const options = {
   headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
   },
 };
-const alleEvents = await fetch("https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card", options).then((r) => r.json());
+const alleEvents = await fetch(
+  "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card",
+  options,
+).then((r) => r.json());
 const andreEvents = alleEvents
   .filter((e: any) => e.id !== event.id)
   .map((e: any) => ({
@@ -67,7 +75,10 @@ const andreEvents = alleEvents
   </head>
 
   <body>
-    <Header background="var(--color-text-inverted)" hoverColor="var(--color-green)" />
+    <Header
+      background="var(--color-text-inverted)"
+      hoverColor="var(--color-green)"
+    />
 
     <main>
       <section class="event-hero">
@@ -114,18 +125,17 @@ const andreEvents = alleEvents
     background-color: var(--color-text-inverted);
   }
 
-  /* ── Desktop: 2-column grid ── */
   .event-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
     gap: 0 clamp(2rem, 4vw, 4rem);
-    padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem) clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 4vw, 4rem);
+    padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem)
+      clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 4vw, 4rem);
     max-width: 1400px;
     margin: 0 auto;
   }
 
-  /* Right column, row 1 */
   .event-header {
     grid-column: 2;
     grid-row: 1;
@@ -134,7 +144,6 @@ const andreEvents = alleEvents
     gap: 0.1rem;
   }
 
-  /* Left column, spanning both rows */
   .poster {
     grid-column: 1;
     grid-row: 1 / 3;
@@ -145,7 +154,6 @@ const andreEvents = alleEvents
     display: block;
   }
 
-  /* Right column, row 2 */
   .event-body {
     grid-column: 2;
     grid-row: 2;
@@ -169,7 +177,6 @@ const andreEvents = alleEvents
     display: flex;
   }
 
-  /* ── Bar ── */
   .bar-section {
     width: 100%;
   }
@@ -177,9 +184,9 @@ const andreEvents = alleEvents
   .bar-image {
     width: 100%;
     object-fit: cover;
+    margin-top: 6rem;
   }
 
-  /* ── Upcoming events heading ── */
   .events {
     padding: 6rem 4rem;
     max-width: 1400px;
@@ -190,7 +197,6 @@ const andreEvents = alleEvents
     margin: 0;
   }
 
-  /* ── Mobile ── */
   @media (max-width: 768px) {
     .event-hero {
       grid-template-columns: 1fr 1fr;
@@ -199,13 +205,11 @@ const andreEvents = alleEvents
       padding: 1.5rem;
     }
 
-    /* Header spans full width across top */
     .event-header {
       grid-column: 1 / 3;
       grid-row: 1;
     }
 
-    /* Poster left, body right — side by side */
     .poster {
       grid-column: 1;
       grid-row: 2;
