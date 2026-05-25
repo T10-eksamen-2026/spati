@@ -7,7 +7,7 @@ interface Props {
   image: string;
   dato?: string;
   tid?: string;
-  type: string;
+  type?: string;
   href?: string;
 }
 
@@ -41,7 +41,7 @@ const { title, text, image, dato, href } = Astro.props;
   }
 
   .billede-wrapper img {
-    width: 100%;
+    max-width: 100%;
     object-fit: cover;
     display: block;
   }
@@ -64,23 +64,7 @@ const { title, text, image, dato, href } = Astro.props;
     margin: 0;
   }
 
-  @media (max-width: 799px) {
-    .billede-wrapper {
-      width: 60%;
-      max-width: 260px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-
-    .billede-wrapper img:first-child {
-      width: 100%;
-      height: auto;
-      object-fit: unset;
-      display: block;
-    }
-  }
-
-  @media (max-width: 579px) {
+  @media (max-width: 600px) {
     .event-card {
       width: 75%;
       max-width: 300px;

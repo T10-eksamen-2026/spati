@@ -4,18 +4,20 @@ import Header from "../../components/Header.astro";
 import Button from "../../components/Button.astro";
 import EventKarrusel from "../../components/EventKarrusel.astro";
 
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
+  },
+};
+
 export async function getStaticPaths() {
   const options = {
     headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
     },
   };
 
-  const response = await fetch(
-    "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card",
-    options,
-  );
+  const response = await fetch("https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card", options);
   const data = await response.json();
 
   return data.map((event: any) => ({
@@ -42,23 +44,19 @@ interface Props {
 
 const { event } = Astro.props as Props;
 
-const options = {
-  headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
-  },
-};
-const alleEvents = await fetch(
-  "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card",
-  options,
-).then((r) => r.json());
-const andreEvents = alleEvents
-  .filter((e: any) => e.id !== event.id)
+const allEventsResponse = await fetch("https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card", options);
+const allEvents = await allEventsResponse.json();
+
+const specialEvents = allEvents
+  .filter((e: any) => e.type === "special" && e.id !== event.id)
   .map((e: any) => ({
     title: e.titel,
     text: e.teaser,
-    image: e.billede,
+    info: e.info,
     dato: e.dato,
+    tid: e.tid,
+    image: e.billede,
+    type: e.type,
     href: `/event/${e.id}`,
   }));
 ---
@@ -75,10 +73,7 @@ const andreEvents = alleEvents
   </head>
 
   <body>
-    <Header
-      background="var(--color-text-inverted)"
-      hoverColor="var(--color-green)"
-    />
+    <Header hoverColor="var(--color-green)" />
 
     <main>
       <section class="event-hero">
@@ -104,7 +99,7 @@ const andreEvents = alleEvents
 
       <section class="events">
         <h2>upcoming events</h2>
-        <EventKarrusel events={andreEvents} />
+        <EventKarrusel events={specialEvents} titel=" " />
       </section>
     </main>
 
@@ -123,6 +118,7 @@ const andreEvents = alleEvents
 
   body {
     background-color: var(--color-text-inverted);
+    padding-top: 160px;
   }
 
   .event-hero {
@@ -130,8 +126,7 @@ const andreEvents = alleEvents
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
     gap: 0 clamp(2rem, 4vw, 4rem);
-    padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem)
-      clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 4vw, 4rem);
+    padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem) clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 4vw, 4rem);
     max-width: 1400px;
     margin: 0 auto;
   }
@@ -147,7 +142,6 @@ const andreEvents = alleEvents
   .poster {
     grid-column: 1;
     grid-row: 1 / 3;
-    /* width: 65%; */
     max-width: none;
     object-fit: cover;
     align-self: start;
@@ -197,7 +191,7 @@ const andreEvents = alleEvents
     margin: 0;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     .event-hero {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;

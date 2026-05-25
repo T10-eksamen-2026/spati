@@ -13,9 +13,10 @@ interface Event {
 interface Props {
   events: Event[];
   titel?: string;
+  undertitel?: string;
 }
 
-const { events, titel } = Astro.props;
+const { events, titel, undertitel } = Astro.props;
 ---
 
 <section class="event-karrusel">
@@ -44,6 +45,7 @@ const { events, titel } = Astro.props;
       </button>
     </div>
   </div>
+  {undertitel && <h3 class="undertitel">{undertitel}</h3>}
 
   <div class="karrusel-indre">
     <button class="burst-btn mobil-forrige forrige" aria-label="Forrige">
@@ -88,6 +90,11 @@ const { events, titel } = Astro.props;
     text-align: center;
   }
 
+  .undertitel {
+    margin-bottom: 3rem;
+    margin-top: -1rem;
+  }
+
   .karrusel-header {
     display: flex;
     align-items: center;
@@ -95,14 +102,15 @@ const { events, titel } = Astro.props;
     margin-bottom: 1rem;
   }
 
-  .karrusel-titel {
-    margin: 0;
-    text-transform: lowercase;
-  }
-
   .desktop-navigation {
     display: none;
     gap: 0.5rem;
+  }
+
+  .karrusel-titel {
+    text-align: center;
+    width: 100%;
+    margin: 0;
   }
 
   .karrusel-indre {
@@ -130,8 +138,8 @@ const { events, titel } = Astro.props;
   }
 
   .burst-btn {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     flex-shrink: 0;
     cursor: pointer;
     border: none;
@@ -166,6 +174,17 @@ const { events, titel } = Astro.props;
       text-align: left;
     }
 
+    .karrusel-titel {
+      text-align: left;
+      width: auto;
+    }
+    .burst-btn {
+      width: 80px;
+      height: 80px;
+    }
+    .undertitel {
+      margin-top: -2rem;
+    }
     .desktop-navigation {
       display: flex;
     }
@@ -233,7 +252,9 @@ const { events, titel } = Astro.props;
       const per = getSlidesPerView();
       aktivSlide = Math.max(0, aktivSlide - per);
       updateTransform();
-      setTimeout(() => { isAnimating = false; }, 400);
+      setTimeout(() => {
+        isAnimating = false;
+      }, 400);
     }
 
     function næste() {
@@ -244,7 +265,9 @@ const { events, titel } = Astro.props;
       isAnimating = true;
       aktivSlide = Math.min(maxSlide, aktivSlide + per);
       updateTransform();
-      setTimeout(() => { isAnimating = false; }, 400);
+      setTimeout(() => {
+        isAnimating = false;
+      }, 400);
     }
 
     function checkCentering() {
