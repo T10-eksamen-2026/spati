@@ -47,10 +47,14 @@ const specialEvents = eventSlides.filter((event: any) => event.type === "special
         <Hero text="SOCIAL SCENE" image="/img/dj.png" imageAlt="DJ pult" />
         <h1>Events</h1>
         <h2>what happens at späti</h2>
-        <img src="/img/musikengel.svg" alt="Engel der spiller på fløjte" />
+        <div class="engel-wrapper">
+          <img src="/img/musikengel.svg" alt="Engel der spiller på fløjte" />
+        </div>
         <div class="eventkarrusel">
           <EventKarrusel events={repeatedEvents} titel="repeated events" undertitel="Ny uge, samme gode vibe" />
-          <img src="/img/musikengel.svg" alt="Engel der spiller på fløjte" />
+          <div class="engel-wrapper">
+            <img src="/img/musikengel.svg" alt="Engel der spiller på fløjte" />
+          </div>
           <EventKarrusel events={specialEvents} titel="special events" undertitel="Events du ikke vil gå glip af" />
         </div>
       </Layout>
@@ -66,19 +70,24 @@ const specialEvents = eventSlides.filter((event: any) => event.type === "special
     background-color: var(--color-text-inverted);
   }
   h1,
-  h2,
-  img {
+  h2 {
     text-align: center;
     display: block;
     margin: 0 auto;
   }
-  img {
-    width: 200px;
-    margin: 5rem;
-    justify-self: center;
-  }
 
   .eventkarrusel {
     width: 100%;
+  }
+
+  .engel-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .engel-wrapper img {
+    width: 200px;
+    margin: 5rem 0;
   }
 </style>
