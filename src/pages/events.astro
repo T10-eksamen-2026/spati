@@ -41,13 +41,17 @@ const specialEvents = eventSlides.filter((event: any) => event.type === "special
     <title>Nørrebro Späti</title>
   </head>
   <body>
-    <Header background="var(--color-pink)" hoverColor="#fff" />
+    <Header hoverColor="var(--color-green)" />
     <main>
       <Layout title="Social Scene">
         <Hero text="SOCIAL SCENE" image="/img/dj.png" imageAlt="DJ pult" />
+        <h1>Events</h1>
+        <h2>what happens at späti</h2>
+        <img src="/img/musikengel.svg" alt="Engel der spiller på fløjte" />
         <div class="eventkarrusel">
-          <EventKarrusel events={repeatedEvents} titel="repeated events" />
-          <EventKarrusel events={specialEvents} titel="special events" />
+          <EventKarrusel events={repeatedEvents} titel="repeated events" undertitel="Ny uge, samme gode vibe" />
+          <img src="/img/musikengel.svg" alt="Engel der spiller på fløjte" />
+          <EventKarrusel events={specialEvents} titel="special events" undertitel="Events du ikke vil gå glip af" />
         </div>
       </Layout>
     </main>
@@ -59,5 +63,22 @@ const specialEvents = eventSlides.filter((event: any) => event.type === "special
   body {
     margin: 0;
     padding: 0;
+    background-color: var(--color-text-inverted);
+  }
+  h1,
+  h2,
+  img {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+  img {
+    width: 200px;
+    margin: 5rem;
+    justify-self: center;
+  }
+
+  .eventkarrusel {
+    width: 100%;
   }
 </style>

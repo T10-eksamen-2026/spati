@@ -1,20 +1,37 @@
 ---
-const { background, hoverColor } = Astro.props;
+const { hoverColor } = Astro.props;
 ---
 
-<header class="header" style={`background-color: ${background}; --hover-color: ${hoverColor};`}>
+<header class="header" style={`--hover-color: ${hoverColor};`}>
   <div>
     <a href="/"><img src="/img/englelogo.png" alt="Logo" /></a>
   </div>
   <nav class="nav">
     <ul>
       <li><a class="shake-on-hover" href="/sortiment">vores udvalg</a></li>
-      <li>
-        <a class="shake-on-hover" href="/events">social scene</a>
-      </li>
+      <li><a class="shake-on-hover" href="/events">social scene</a></li>
     </ul>
   </nav>
 </header>
+
+<script>
+  const header = document.querySelector(".header") as HTMLElement;
+  const hero = document.querySelector(".hero");
+
+  if (hero) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          header.style.setProperty("--hover-color", "#fff");
+        } else {
+          header.style.setProperty("--hover-color", header.dataset.defaultHover || "var(--color-green)");
+        }
+      },
+      { threshold: 0.1 },
+    );
+    observer.observe(hero);
+  }
+</script>
 
 <style>
   .header {
@@ -22,6 +39,10 @@ const { background, hoverColor } = Astro.props;
     align-items: top;
     padding-top: 1em;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: transparent;
   }
 
   img {
@@ -73,6 +94,7 @@ const { background, hoverColor } = Astro.props;
   .shake-on-hover:hover {
     animation: shake 0.4s ease;
   }
+
   @media screen and (max-width: 768px) {
     .nav ul {
       gap: 7vw;
