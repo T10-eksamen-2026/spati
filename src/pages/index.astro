@@ -24,39 +24,56 @@ import Card from "../components/Card.astro";
         <Hero />
       </Layout>
 
-      <!-- ── Intro ── -->
       <section class="intro">
         <h1 class="intro__heading">Kiosk & bar</h1>
         <p class="intro__tagline">Your fav hang-out spot</p>
         <p class="intro__text">
-          Vi er ikke helt en kiosk og ikke helt en bar. Vi er det sted du stikker forbi når du ikke har en plan, men alligevel ender med at blive til langt ud på aftenen. Vi sælger naturvin, snacks, tøj og alt muligt andet spøjst. Men mest af alt
-          sælger vi en god aften med folk fra kvarteret.
+          Vi er ikke helt en kiosk og ikke helt en bar. Vi er det sted du
+          stikker forbi når du ikke har en plan, men alligevel ender med at
+          blive til langt ud på aftenen. Vi sælger naturvin, snacks, tøj og alt
+          muligt andet spøjst. Men mest af alt sælger vi en god aften med folk
+          fra kvarteret.
         </p>
       </section>
 
-      <!-- ── Foto ── -->
       <div class="feature-photo">
         <img src="/img/collage.png" alt="Nørrebro Späti interiør" />
       </div>
 
-      <!-- ── Engel SVG ── -->
       <div class="angel">
-        <img src="/public/img/musikengel.svg" alt="Engel der spiller på fløjte" />
+        <img
+          src="/public/img/musikengel.svg"
+          alt="Engel der spiller på fløjte"
+        />
       </div>
 
-      <!-- ── Cards ── -->
       <section class="cards">
         <div class="cards__item">
-          <Card title="vores udvalg" description="Mad, drikke, ting og sager" image="/img/mate.jpg" imageAlt="Club-Mate flaske" href="/sortiment" />
+          <Card
+            title="vores udvalg"
+            description="Mad, drikke, ting og sager"
+            image="/img/mate.jpg"
+            imageAlt="Club-Mate flaske"
+            href="/sortiment"
+          />
         </div>
         <div class="cards__item">
-          <Card title="events og arrangementer" description="Din yndlingskiosk hoster selvfølgelig også dine yndlingsevents" image="/img/events.jpg" imageAlt="Stemningsbillede fra event" href="/events" />
+          <Card
+            title="events og arrangementer"
+            description="Din yndlingskiosk hoster selvfølgelig også dine yndlingsevents"
+            image="/img/events.jpg"
+            imageAlt="Stemningsbillede fra event"
+            href="/events"
+          />
         </div>
       </section>
 
-      <!-- ── Footer CTA ── -->
       <div class="cta">
-        <img class="cta__img" src="/public/img/nummi.svg" alt="Illustreret figur med bar numse" />
+        <img
+          class="cta__img"
+          src="/public/img/nummi.svg"
+          alt="Illustreret figur med bar numse"
+        />
       </div>
     </main>
     <Footer />
@@ -70,7 +87,6 @@ import Card from "../components/Card.astro";
     background-color: var(--color-text-inverted);
   }
 
-  /* ── Intro ── */
   .intro {
     text-align: center;
     padding: 5rem 1.5rem 2rem;
@@ -97,7 +113,6 @@ import Card from "../components/Card.astro";
     margin: 0;
   }
 
-  /* ── Feature photo ── */
   .feature-photo {
     display: flex;
     justify-content: center;
@@ -111,7 +126,6 @@ import Card from "../components/Card.astro";
     display: block;
   }
 
-  /* ── Angel ── */
   .angel {
     display: flex;
     justify-content: center;
@@ -124,7 +138,6 @@ import Card from "../components/Card.astro";
     padding: 20px;
   }
 
-  /* ── Cards ── */
   .cards {
     display: flex;
     flex-direction: column;
@@ -146,7 +159,6 @@ import Card from "../components/Card.astro";
     padding-bottom: 10px;
   }
 
-  /* ── Footer CTA ── */
   .cta {
     display: flex;
     flex-direction: column;
@@ -155,7 +167,6 @@ import Card from "../components/Card.astro";
     padding: 6rem 2rem 3rem;
   }
 
-  /* Desktop: side by side */
   @media (min-width: 720px) {
     .cards {
       display: grid;
@@ -171,7 +182,7 @@ import Card from "../components/Card.astro";
     .cards__item {
       display: grid;
       grid-template-rows: subgrid;
-      grid-row: span 4; /* card har 4 rækker: titel, beskrivelse, billede, knap */
+      grid-row: span 4;
     }
 
     .feature-photo {
