@@ -7,11 +7,13 @@ import EventKarrusel from "../components/EventKarrusel.astro";
 
 const options = {
   headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpqbXpqZXl3em9ubWhyeHBpZG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMzM1NDMsImV4cCI6MjA5MzkwOTU0M30._zazZivT85MElhidAI4pC61XTiWwx7NmS19ru3aUjPo",
   },
 };
 
-const url = "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card";
+const url =
+  "https://zjmzjeywzonmhrxpidme.supabase.co/rest/v1/event_card?select=*&order=id.asc";
 const response = await fetch(url, options);
 const data = await response.json();
 
@@ -26,8 +28,12 @@ const eventSlides = data.map((event: any) => ({
   href: `/event/${event.id}`,
 }));
 
-const repeatedEvents = eventSlides.filter((event: any) => event.type === "repeated");
-const specialEvents = eventSlides.filter((event: any) => event.type === "special");
+const repeatedEvents = eventSlides.filter(
+  (event: any) => event.type === "repeated",
+);
+const specialEvents = eventSlides.filter(
+  (event: any) => event.type === "special",
+);
 ---
 
 <html lang="da">
@@ -53,11 +59,19 @@ const specialEvents = eventSlides.filter((event: any) => event.type === "special
           <img src="/img/musikengel.svg" alt="Engel der spiller på fløjte" />
         </div>
         <div class="eventkarrusel">
-          <EventKarrusel events={repeatedEvents} titel="repeated events" undertitel="Ny uge, samme gode vibe" />
+          <EventKarrusel
+            events={repeatedEvents}
+            titel="repeated events"
+            undertitel="Ny uge, samme gode vibe"
+          />
           <div class="engel-wrapper">
             <img src="/img/musikengel.svg" alt="Engel der spiller på fløjte" />
           </div>
-          <EventKarrusel events={specialEvents} titel="special events" undertitel="Events du ikke vil gå glip af" />
+          <EventKarrusel
+            events={specialEvents}
+            titel="special events"
+            undertitel="Events du ikke vil gå glip af"
+          />
         </div>
       </Layout>
     </main>
