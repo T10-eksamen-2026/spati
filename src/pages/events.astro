@@ -45,8 +45,10 @@ const specialEvents = eventSlides.filter((event: any) => event.type === "special
     <main>
       <Layout title="Events">
         <Hero text="EVENTS EVENTS" image="/img/dj.png" imageAlt="DJ pult" />
-        <h1>Events</h1>
-        <h2>what happens at späti</h2>
+        <div class="eventintro">
+          <h1>Events</h1>
+          <h2>what happens at späti</h2>
+        </div>
         <div class="engel-wrapper">
           <img src="/img/musikengel.svg" alt="Engel der spiller på fløjte" />
         </div>
@@ -88,6 +90,15 @@ const specialEvents = eventSlides.filter((event: any) => event.type === "special
 
   .engel-wrapper img {
     width: 200px;
-    margin: 5rem 0;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .eventkarrusel {
+    padding: 20px;
+  }
+
+  .eventintro {
+    padding: 5rem 1.5rem 2rem;
   }
 </style>
